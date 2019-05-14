@@ -1,0 +1,12 @@
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\bin\WCF_servicio.dll.config
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\bin\WCF_servicio.dll
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\bin\WCF_servicio.pdb
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\bin\EntityFramework.dll
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\bin\EntityFramework.SqlServer.dll
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\bin\EntityFramework.xml
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\bin\EntityFramework.SqlServer.xml
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\obj\Debug\WCF_servicio.csproj.CoreCompileInputs.cache
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\obj\Debug\WCF_servicio.csproj.CopyComplete
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\obj\Debug\WCF_servicio.dll
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\obj\Debug\WCF_servicio.pdb
+C:\Users\Fulvio\source\Laboratorio5\Laboratorio5\WCF_servicio\obj\Debug\WCF_servicio.csprojAssemblyReference.cache

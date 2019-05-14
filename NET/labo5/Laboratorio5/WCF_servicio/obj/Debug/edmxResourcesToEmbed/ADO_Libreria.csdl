@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Autor">
+    <Key>
+      <PropertyRef Name="Id_Autor" />
+    </Key>
+    <Property Name="Id_Autor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Autor_Libro" Relationship="Self.FK__Autor_Lib__Id_au__412EB0B6" FromRole="Autor" ToRole="Autor_Libro" />
+  </EntityType>
+  <EntityType Name="Autor_Libro">
+    <Key>
+      <PropertyRef Name="Id_Autor_Libro" />
+    </Key>
+    <Property Name="Id_Autor_Libro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_autor_fk" Type="Int32" Nullable="false" />
+    <Property Name="Id_libro_fk" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Autor" Relationship="Self.FK__Autor_Lib__Id_au__412EB0B6" FromRole="Autor_Libro" ToRole="Autor" />
+    <NavigationProperty Name="Libro" Relationship="Self.FK__Autor_Lib__Id_li__4222D4EF" FromRole="Autor_Libro" ToRole="Libro" />
+  </EntityType>
+  <EntityType Name="Libro">
+    <Key>
+      <PropertyRef Name="Id_libro" />
+    </Key>
+    <Property Name="Id_libro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ISBN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Editorial" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumPags" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Autor_Libro" Relationship="Self.FK__Autor_Lib__Id_li__4222D4EF" FromRole="Libro" ToRole="Autor_Libro" />
+    <NavigationProperty Name="Prestamos" Relationship="Self.FK__Prestamos__Id_li__3D5E1FD2" FromRole="Libro" ToRole="Prestamos" />
+  </EntityType>
+  <EntityType Name="Prestamos">
+    <Key>
+      <PropertyRef Name="Id_Prestamos" />
+    </Key>
+    <Property Name="Id_Prestamos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_libro_fk" Type="Int32" Nullable="false" />
+    <Property Name="Id_usuario_fk" Type="Int32" Nullable="false" />
+    <Property Name="Fec_prestamos" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fec_devolucion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Libro" Relationship="Self.FK__Prestamos__Id_li__3D5E1FD2" FromRole="Prestamos" ToRole="Libro" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Prestamos__Id_us__3E52440B" FromRole="Prestamos" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumUsuario" Type="Int32" Nullable="false" />
+    <Property Name="NIF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Prestamos" Relationship="Self.FK__Prestamos__Id_us__3E52440B" FromRole="Usuario" ToRole="Prestamos" />
+  </EntityType>
+  <Association Name="FK__Autor_Lib__Id_au__412EB0B6">
+    <End Role="Autor" Type="Self.Autor" Multiplicity="1" />
+    <End Role="Autor_Libro" Type="Self.Autor_Libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Autor">
+        <PropertyRef Name="Id_Autor" />
+      </Principal>
+      <Dependent Role="Autor_Libro">
+        <PropertyRef Name="Id_autor_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Autor_Lib__Id_li__4222D4EF">
+    <End Role="Libro" Type="Self.Libro" Multiplicity="1" />
+    <End Role="Autor_Libro" Type="Self.Autor_Libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="Id_libro" />
+      </Principal>
+      <Dependent Role="Autor_Libro">
+        <PropertyRef Name="Id_libro_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Prestamos__Id_li__3D5E1FD2">
+    <End Role="Libro" Type="Self.Libro" Multiplicity="1" />
+    <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="Id_libro" />
+      </Principal>
+      <Dependent Role="Prestamos">
+        <PropertyRef Name="Id_libro_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Prestamos__Id_us__3E52440B">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Prestamos">
+        <PropertyRef Name="Id_usuario_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Lab5Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Autor" EntityType="Self.Autor" />
+    <EntitySet Name="Autor_Libro" EntityType="Self.Autor_Libro" />
+    <EntitySet Name="Libro" EntityType="Self.Libro" />
+    <EntitySet Name="Prestamos" EntityType="Self.Prestamos" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Autor_Lib__Id_au__412EB0B6" Association="Self.FK__Autor_Lib__Id_au__412EB0B6">
+      <End Role="Autor" EntitySet="Autor" />
+      <End Role="Autor_Libro" EntitySet="Autor_Libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Autor_Lib__Id_li__4222D4EF" Association="Self.FK__Autor_Lib__Id_li__4222D4EF">
+      <End Role="Libro" EntitySet="Libro" />
+      <End Role="Autor_Libro" EntitySet="Autor_Libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Prestamos__Id_li__3D5E1FD2" Association="Self.FK__Prestamos__Id_li__3D5E1FD2">
+      <End Role="Libro" EntitySet="Libro" />
+      <End Role="Prestamos" EntitySet="Prestamos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Prestamos__Id_us__3E52440B" Association="Self.FK__Prestamos__Id_us__3E52440B">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Prestamos" EntitySet="Prestamos" />
+    </AssociationSet>
+    <FunctionImport Name="buscarlibro" ReturnType="Collection(Int32)">
+      <Parameter Name="idLibro" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
