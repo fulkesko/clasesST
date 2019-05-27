@@ -54,4 +54,10 @@ public class Data {
 //             estado = rs.getInt(3);       
  
     }
+    
+    public void buscarCliente(){
+        //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
+        //cambiar void para entregar para afuera mientras salida por consola;
+    String query = "SELECT COUNT(*) FROM banco.usuario;  ";
+    }
 }
