@@ -20,13 +20,13 @@ public class Data {
                      + "(NULL, 'tarjeta 1', 'C', '22,22,22,22,22,22,22,22,22,22', 1), "
                      + "(NULL, 'tarjeta 1', 'D', '33,33,33,33,33,33,33,33,33,33', 1), "
                      + "(NULL, 'tarjeta 1', 'E', '44,44,44,44,44,44,44,44,44,44', 1)";
-              
-                     
+         //falta comprobar ya existente     
+        System.out.println("tarjeta creada");             
         c.ejecutar(query);
         
     }
     public void buscarTarjeta() throws SQLException{
-      
+        //falta recibir parametros para la busqueda WHERE codigo '"+id de tarjeta+"'
         String query = "SELECT * FROM banco.tarjeta WHERE codigo = 'tarjeta 1'";
        
          ResultSet rs = c.ejecutarSelect(query);
