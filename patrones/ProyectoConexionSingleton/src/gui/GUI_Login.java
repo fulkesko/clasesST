@@ -90,7 +90,11 @@ public class GUI_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreClienteActionPerformed
 
     private void btnSiguienteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteLoginActionPerformed
- 
+
+        GUI_MenuCliente cli = new GUI_MenuCliente();
+        cli.setVisible(true);
+        dispose();
+
                 
     }//GEN-LAST:event_btnSiguienteLoginActionPerformed
 
