@@ -1,0 +1,1 @@
+CONSOLE21301: Se rechaza serviceWorker.getRegistrations debido a contexto no seguro o restricción del host en file:///C:/Users/Fulvio/source/clases/clasesST/NET/labo7/index.html.

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibreModelStoreContainer" CdmEntityContainer="LibreEntities">
+    <EntitySetMapping Name="Autor">
+      <EntityTypeMapping TypeName="LibreModel.Autor">
+        <MappingFragment StoreEntitySet="Autor">
+          <ScalarProperty Name="Id_Autor" ColumnName="Id_Autor" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autor_Libro">
+      <EntityTypeMapping TypeName="LibreModel.Autor_Libro">
+        <MappingFragment StoreEntitySet="Autor_Libro">
+          <ScalarProperty Name="Id_Autor_Libro" ColumnName="Id_Autor_Libro" />
+          <ScalarProperty Name="Id_autor_fk" ColumnName="Id_autor_fk" />
+          <ScalarProperty Name="Id_libro_fk" ColumnName="Id_libro_fk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libro">
+      <EntityTypeMapping TypeName="LibreModel.Libro">
+        <MappingFragment StoreEntitySet="Libro">
+          <ScalarProperty Name="Id_libro" ColumnName="Id_libro" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="Editorial" ColumnName="Editorial" />
+          <ScalarProperty Name="NumPags" ColumnName="NumPags" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prestamos">
+      <EntityTypeMapping TypeName="LibreModel.Prestamos">
+        <MappingFragment StoreEntitySet="Prestamos">
+          <ScalarProperty Name="Id_Prestamos" ColumnName="Id_Prestamos" />
+          <ScalarProperty Name="Id_libro_fk" ColumnName="Id_libro_fk" />
+          <ScalarProperty Name="Id_usuario_fk" ColumnName="Id_usuario_fk" />
+          <ScalarProperty Name="Fec_prestamos" ColumnName="Fec_prestamos" />
+          <ScalarProperty Name="Fec_devolucion" ColumnName="Fec_devolucion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="LibreModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="NumUsuario" ColumnName="NumUsuario" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="buscarlibro" FunctionName="LibreModel.Store.buscarlibro" />
+  </EntityContainerMapping>
+</Mapping>
