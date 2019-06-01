@@ -3,6 +3,7 @@ import controlador.Data;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,26 +85,65 @@ public class GUI extends javax.swing.JFrame {
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         Data d = new Data();
-        System.out.println(d.numrandom());
-        
-        String nn = d.numrandom();
-        
-        String[] ccc = nn.split("-");
-        System.out.println(nn);
-        System.out.println("======================");
-        System.out.println(ccc[0]);
-        System.out.println(ccc[1]);
-        System.out.println(ccc[2]);
-        System.out.println(ccc[3]);
-        System.out.println(ccc[4]);
-        System.out.println(ccc[5]);
-        System.out.println(ccc[6]);
-        System.out.println(ccc[7]);
-        System.out.println(ccc[8]);
-        System.out.println(ccc[9]);
-   
-        
-        //d.insertarTarjeta();
+//        System.out.println(d.numrandom());
+        String cadena = d.numrandom();
+        System.out.println(cadena);
+        String a = "";
+        String b = "";
+        String c = "";
+        String de = "";
+        String e = "";
+        String[] plit = cadena.split("/");
+        //dejarlo mas bonito despues
+        for (int i = 0; i < 50; i++) {
+            if(i<10){
+            a+= plit[i]+"/";
+            }
+            if(i>=10 && i<20){
+            b+= plit[i]+"/";
+            }
+            if(i>=20 && i<30){
+            c+= plit[i]+"/";
+            }
+            if(i>=30 && i<40){
+            de+= plit[i]+"/";
+            }
+            if(i>=40 && i<50){
+            e+= plit[i]+"/";
+            }
+            
+        }
+        System.out.println("coordenada a: "+a);
+        System.out.println("coordenada b: "+b);
+        System.out.println("coordenada c: "+c);
+        System.out.println("coordenada d: "+de);
+        System.out.println("coordenada e: "+e);
+        try {
+            d.insertarTarjeta(a, b, c, de, e);
+            
+            
+            /*
+            String nn = d.numrandom();
+            
+            String[] ccc = nn.split("-");
+            System.out.println(nn);
+            System.out.println("======================");
+            System.out.println(ccc[0]);
+            System.out.println(ccc[1]);
+            System.out.println(ccc[2]);
+            System.out.println(ccc[3]);
+            System.out.println(ccc[4]);
+            System.out.println(ccc[5]);
+            System.out.println(ccc[6]);
+            System.out.println(ccc[7]);
+            System.out.println(ccc[8]);
+            System.out.println(ccc[9]);
+            
+            */
+            //d.insertarTarjeta();
+        } catch (SQLException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnVerTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTarjetaActionPerformed

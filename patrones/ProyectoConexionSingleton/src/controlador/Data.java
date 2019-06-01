@@ -5,11 +5,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 import modelo.Tarjeta;
-import gui.GUI;
 
 public class Data {
 
@@ -22,12 +20,12 @@ public class Data {
     public String numrandom(){
         String coorde = "";
         Random random = new Random();
-        IntStream intStream = random.ints(100, 10, 99);
+        IntStream intStream = random.ints(50, 10, 99);
         Iterator iterator = intStream.iterator();
         int count = 0;
         while (iterator.hasNext()) {
-            System.out.println("Random Number " + iterator.next());
-            coorde = coorde + iterator.next()+"-";
+            //System.out.println("Random Number " + iterator.next());
+            coorde = coorde + iterator.next()+"/";
             
             count++;
         }
@@ -50,8 +48,8 @@ public class Data {
 //        System.out.println(li);
 //    } 
     
-    public void insertarTarjeta() throws SQLException {
-        String query = "INSERT INTO tarjeta VALUES";
+    public void insertarTarjeta(String a, String b,String ce,String d,String e) throws SQLException {
+        String query = "INSERT INTO tarjeta VALUES (NULL,'"+a+"','"+b+"','"+ce+"','"+d+"','"+e+"',1,1)";
         //falta comprobar ya existente     
         System.out.println("tarjeta creada");
         c.ejecutar(query);
