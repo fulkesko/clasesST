@@ -39,6 +39,7 @@ c VARCHAR(60),
 d VARCHAR(60),
 e VARCHAR(60),
 usuario_id_fk INT,
+estado tinyint,
 
 PRIMARY KEY(id),
 FOREIGN KEY (usuario_id_fk) REFERENCES usuario(id)

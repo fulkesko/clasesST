@@ -28,9 +28,10 @@ public class Data {
         while (iterator.hasNext()) {
             System.out.println("Random Number " + iterator.next());
             coorde = coorde + iterator.next()+"-";
-            System.out.println("tamaño: " + count);
+            
             count++;
         }
+        System.out.println("tamaño: " + count);
         return coorde;
     }
     
@@ -50,11 +51,7 @@ public class Data {
 //    } 
     
     public void insertarTarjeta() throws SQLException {
-        String query = "INSERT INTO tarjeta VALUES(NULL, 'tarjeta 1', 'A', '00,00,00,00,00,00,00,00,00,00', 1), "
-                + "(NULL, 'tarjeta 1', 'B', '11,11,11,11,11,11,11,11,11,11', 1), "
-                + "(NULL, 'tarjeta 1', 'C', '22,22,22,22,22,22,22,22,22,22', 1), "
-                + "(NULL, 'tarjeta 1', 'D', '33,33,33,33,33,33,33,33,33,33', 1), "
-                + "(NULL, 'tarjeta 1', 'E', '44,44,44,44,44,44,44,44,44,44', 1)";
+        String query = "INSERT INTO tarjeta VALUES";
         //falta comprobar ya existente     
         System.out.println("tarjeta creada");
         c.ejecutar(query);
