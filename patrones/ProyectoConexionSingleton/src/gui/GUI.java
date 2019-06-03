@@ -1,13 +1,8 @@
 package gui;
 import controlador.Data;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.IntStream;
 
 public class GUI extends javax.swing.JFrame {
 
@@ -122,25 +117,6 @@ public class GUI extends javax.swing.JFrame {
             d.insertarTarjeta(a, b, c, de, e);
             
             
-            /*
-            String nn = d.numrandom();
-            
-            String[] ccc = nn.split("-");
-            System.out.println(nn);
-            System.out.println("======================");
-            System.out.println(ccc[0]);
-            System.out.println(ccc[1]);
-            System.out.println(ccc[2]);
-            System.out.println(ccc[3]);
-            System.out.println(ccc[4]);
-            System.out.println(ccc[5]);
-            System.out.println(ccc[6]);
-            System.out.println(ccc[7]);
-            System.out.println(ccc[8]);
-            System.out.println(ccc[9]);
-            
-            */
-            //d.insertarTarjeta();
         } catch (SQLException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -148,7 +124,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void btnVerTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTarjetaActionPerformed
         Data d = new Data();
-        d.numrandom();
+        try {
+            d.buscarTarjeta();
+        } catch (SQLException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnVerTarjetaActionPerformed
 
     public static void main(String args[]) {

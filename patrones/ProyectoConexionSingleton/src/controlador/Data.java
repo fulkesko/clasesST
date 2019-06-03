@@ -58,31 +58,51 @@ public class Data {
 
     public void buscarTarjeta() throws SQLException {
         //falta recibir parametros para la busqueda WHERE codigo '"+id de tarjeta+"'
-        String query = "SELECT * FROM banco.tarjeta WHERE codigo = 'tarjeta 1'";
+        String query = "SELECT * FROM banco.tarjeta WHERE id = '2'";
 
         ResultSet rs = c.ejecutarSelect(query);
+        Tarjeta tar = new Tarjeta();
+        ArrayList la = new ArrayList();
+        ArrayList lb = new ArrayList();
+        ArrayList lc = new ArrayList();
+        ArrayList ld = new ArrayList();
+        ArrayList le = new ArrayList();
         while (rs.next()) {
-            Tarjeta tar = new Tarjeta();
-            String coor = rs.getString("coordenada");
-            tar.setCod(rs.getString("codigo"));
-            tar.setLetra(rs.getString("letra"));
-            String[] coordenada = coor.split(",");
-            ArrayList li = new ArrayList();
-            //netbean recomendacion
-            li.addAll(Arrays.asList(coordenada));
-            tar.setCoordenada(li);
-            tar.setEstado(rs.getByte("estado"));
-
+            tar.setId(rs.getInt("id"));
+            //cambiar para obtener rut del cliente
+            tar.setUsuario(rs.getString("usuario_id_fk"));
+            tar.setEstado(rs.getInt("estado"));
+            
+            String coorA = rs.getString("a");
+            String[] cordeA = coorA.split("/");
+            la.addAll(Arrays.asList(cordeA));
+            tar.setLetraA(la);
+            
+            String coorB = rs.getString("b");
+            String[] cordeB = coorB.split("/");
+            lb.addAll(Arrays.asList(cordeB));
+            tar.setLetraB(lb);
+            
+            String coorC = rs.getString("c");
+            String[] cordeC = coorC.split("/");
+            lc.addAll(Arrays.asList(cordeC));
+            tar.setLetraC(lc);
+            
+            String coorD = rs.getString("d");
+            String[] cordeD = coorD.split("/");
+            ld.addAll(Arrays.asList(cordeD));
+            tar.setLetraD(ld);
+            
+            String coorE = rs.getString("e");
+            String[] cordeE = coorE.split("/");
+            le.addAll(Arrays.asList(cordeE));
+            tar.setLetraE(le);
+            
             System.out.println(tar);
 
         }
 
-//             tar.setCoordenada(rs.getString("coordenada"));
-//         String[] sop = cod.split(",|%",-1);
-//             id = rs.getInt(1);
-//             cod = rs.getString(2);
-//             estado = rs.getInt(3);       
-    }
+ }
 
     public void buscarCliente() {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
