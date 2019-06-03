@@ -126,10 +126,10 @@ public class Data {
     public int ObtenerSesion(String nom, String pass) throws SQLException {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
-        String query = "SELECT COUNT(*) AS Existe FROM banco.usuario WHERE nombre = '"+nom+"' AND pass = '"+pass+"' ";
+        String query = "SELECT COUNT(*) AS sesion FROM banco.usuario WHERE nombre = '"+nom+"' AND pass = '"+pass+"' ";
         ResultSet rs = c.ejecutarSelect(query);
         
-        int a = rs.getInt("Existe");
+        int a = rs.getInt("sesion");
         //mejorar con boleano? comprobar despues
         return a;
     }
