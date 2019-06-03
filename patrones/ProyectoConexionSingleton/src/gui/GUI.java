@@ -80,46 +80,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         Data d = new Data();
-//        System.out.println(d.numrandom());
+        //System.out.println(d.numrandom());
         String cadena = d.numrandom();
-        System.out.println(cadena);
-        String a = "";
-        String b = "";
-        String c = "";
-        String de = "";
-        String e = "";
-        String[] plit = cadena.split("/");
-        //dejarlo mas bonito despues
-        for (int i = 0; i < 50; i++) {
-            if(i<10){
-            a+= plit[i]+"/";
-            }
-            if(i>=10 && i<20){
-            b+= plit[i]+"/";
-            }
-            if(i>=20 && i<30){
-            c+= plit[i]+"/";
-            }
-            if(i>=30 && i<40){
-            de+= plit[i]+"/";
-            }
-            if(i>=40 && i<50){
-            e+= plit[i]+"/";
-            }
-            
-        }
-        System.out.println("coordenada a: "+a);
-        System.out.println("coordenada b: "+b);
-        System.out.println("coordenada c: "+c);
-        System.out.println("coordenada d: "+de);
-        System.out.println("coordenada e: "+e);
-        try {
-            d.insertarTarjeta(a, b, c, de, e);
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        //agregar metodo a la data
+        d.generarTarjeta(cadena);
+        
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnVerTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTarjetaActionPerformed

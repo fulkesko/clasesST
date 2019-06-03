@@ -1,11 +1,14 @@
 package controlador;
 
+import gui.GUI;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.IntStream;
 import modelo.Tarjeta;
 
@@ -26,29 +29,45 @@ public class Data {
         while (iterator.hasNext()) {
             //System.out.println("Random Number " + iterator.next());
             coorde = coorde + iterator.next()+"/";
-            
             count++;
         }
         System.out.println("tamaño: " + count);
         return coorde;
     }
     
-//    public void numrandom(){
-//           ArrayList li = new ArrayList();
-//        Random random = new Random();
-//        IntStream intStream = random.ints(100, 10, 99);
-//        Iterator iterator = intStream.iterator();
-//        int count = 0;
-//        while (iterator.hasNext()) {
-//            System.out.println("Random Number " + iterator.next());
-//            li.add(iterator.next());
-//            System.out.println("tamaño: " + count);
-//            count++;
-//        }
-//        System.out.println(li);
-//    } 
-    
+    public void generarTarjeta(String cadena){
+    String a = "";
+        String b = "";
+        String ce = "";
+        String de = "";
+        String e = "";
+        String[] plit = cadena.split("/");
+        //dejarlo mas bonito despues
+        for (int i = 0; i < 50; i++) {
+            if(i<10){
+            a+= plit[i]+"/";
+            }
+            if(i>=10 && i<20){
+            b+= plit[i]+"/";
+            }
+            if(i>=20 && i<30){
+            ce+= plit[i]+"/";
+            }
+            if(i>=30 && i<40){
+            de+= plit[i]+"/";
+            }
+            if(i>=40 && i<50){
+            e+= plit[i]+"/";
+            }
+        }
+        try {
+            insertarTarjeta(a, b, ce, de, e);
+        } catch (SQLException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public void insertarTarjeta(String a, String b,String ce,String d,String e) throws SQLException {
+        //pasar por parametro el usuario id y estado
         String query = "INSERT INTO tarjeta VALUES (NULL,'"+a+"','"+b+"','"+ce+"','"+d+"','"+e+"',1,1)";
         //falta comprobar ya existente     
         System.out.println("tarjeta creada");
@@ -104,9 +123,14 @@ public class Data {
 
  }
 
-    public void buscarCliente() {
+    public int buscarCliente(String nom, String pass) throws SQLException {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
-        String query = "SELECT COUNT(*) FROM banco.usuario;  ";
+        String query = "SELECT COUNT(*) AS Existe FROM banco.usuario WHERE nombre = '"+nom+"' AND pass = '"+pass+"' ";
+        ResultSet rs = c.ejecutarSelect(query);
+        
+        int a = rs.getInt("Existe");
+        //mejorar con boleano? comprobar despues
+        return a;
     }
 }
