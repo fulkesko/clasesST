@@ -9,10 +9,12 @@ nombre VARCHAR(50),
 PRIMARY KEY(id)
 );
 
-
 CREATE TABLE usuario(
 id INT AUTO_INCREMENT,
+--rut de sobra supongo
 rut VARCHAR(15),
+--que inicie por rut en ves de nombre
+--debatir acerca
 nombre VARCHAR(60),
 pass VARCHAR(64),
 idTipoUsu INT,
@@ -21,11 +23,12 @@ PRIMARY KEY (id),
 FOREIGN KEY (idTipoUsu) REFERENCES tipoUsuario(id)
 );
 
-CREATE TABLE formulario(
+CREATE TABLE formularioCliente(
 id INT AUTO_INCREMENT,
 rut VARCHAR(15),
 nomusuari VARCHAR(60),
 apellido VARCHAR(60),
+--falta el materno
 sueldo_liquido INT,
 
 PRIMARY KEY (id)

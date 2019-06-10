@@ -66,6 +66,7 @@ public class Data {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public void insertarTarjeta(String a, String b,String ce,String d,String e) throws SQLException {
         //pasar por parametro el usuario id y estado
         String query = "INSERT INTO tarjeta VALUES (NULL,'"+a+"','"+b+"','"+ce+"','"+d+"','"+e+"',1,1)";
@@ -123,14 +124,18 @@ public class Data {
 
  }
 
-    public int ObtenerSesion(String nom, String pass) throws SQLException {
+    public void existeUsuario(String nom, String pass) throws SQLException {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
-        String query = "SELECT COUNT(*) AS sesion FROM banco.usuario WHERE nombre = '"+nom+"' AND pass = '"+pass+"' ";
+        //usuario1, pass 123
+        String query = "SELECT COUNT(*) AS existe FROM banco.usuario WHERE nombre = '"+nom+"' AND pass = '"+pass+"' ";
         ResultSet rs = c.ejecutarSelect(query);
+        if(rs.next()){
+            String a = rs.getString("existe");
+            System.out.println(a);
+            //mejorar con boleano? comprobar despues
+        }
         
-        int a = rs.getInt("sesion");
-        //mejorar con boleano? comprobar despues
-        return a;
+        
     }
 }

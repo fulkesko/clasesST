@@ -5,9 +5,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GUI extends javax.swing.JFrame {
-
+    Data d = new Data();
     public GUI() {
         initComponents();
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -46,6 +47,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         btnVerCliente.setText("Ver Cliente");
+        btnVerCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,7 +85,7 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-        Data d = new Data();
+       
         //System.out.println(d.numrandom());
         String cadena = d.numrandom();
         //agregar metodo a la data
@@ -88,13 +94,22 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnVerTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTarjetaActionPerformed
-        Data d = new Data();
+        
         try {
             d.buscarTarjeta();
         } catch (SQLException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnVerTarjetaActionPerformed
+
+    private void btnVerClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClienteActionPerformed
+        try {
+            d.existeUsuario("usuario1", "123");
+        } catch (SQLException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnVerClienteActionPerformed
 
     public static void main(String args[]) {
 
