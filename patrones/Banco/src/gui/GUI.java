@@ -102,6 +102,8 @@ public class GUI extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //.get obtiene en la coordenada especifica
+        //mejorar una logica para obtencion en la transferencia onda, saber cuando y en que posicision es
         System.out.println(tar.getLetraA().get(2));
     }//GEN-LAST:event_btnVerTarjetaActionPerformed
 
