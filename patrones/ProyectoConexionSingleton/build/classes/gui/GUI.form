@@ -79,7 +79,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnVerTarjeta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ver Tarjeta"/>
+        <Property name="text" type="java.lang.String" value="Buscar Tarjeta"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerTarjetaActionPerformed"/>

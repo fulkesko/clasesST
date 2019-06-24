@@ -3,6 +3,7 @@ import controlador.Data;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import modelo.Tarjeta;
 
 public class GUI extends javax.swing.JFrame {
     Data d = new Data();
@@ -39,7 +40,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        btnVerTarjeta.setText("Ver Tarjeta");
+        btnVerTarjeta.setText("Buscar Tarjeta");
         btnVerTarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerTarjetaActionPerformed(evt);
@@ -94,12 +95,14 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnVerTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTarjetaActionPerformed
-        
+        Tarjeta tar = new Tarjeta();
         try {
-            d.buscarTarjeta();
+            //obtiene segun id
+           tar = d.buscarTarjeta(5);
         } catch (SQLException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println(tar.getLetraA().get(2));
     }//GEN-LAST:event_btnVerTarjetaActionPerformed
 
     private void btnVerClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClienteActionPerformed

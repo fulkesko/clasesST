@@ -76,9 +76,9 @@ public class Data {
 
     }
 
-    public void buscarTarjeta() throws SQLException {
+    public Tarjeta buscarTarjeta(int id) throws SQLException {
         //falta recibir parametros para la busqueda WHERE codigo '"+id de tarjeta+"'
-        String query = "SELECT * FROM banco.tarjeta WHERE id = '2'";
+        String query = "SELECT * FROM banco.tarjeta WHERE id = '"+id+"'";
 
         ResultSet rs = c.ejecutarSelect(query);
         Tarjeta tar = new Tarjeta();
@@ -118,9 +118,10 @@ public class Data {
             le.addAll(Arrays.asList(cordeE));
             tar.setLetraE(le);
             
-            System.out.println(tar);
+            System.out.println("se obtuvo");
 
         }
+        return tar;
 
  }
 
