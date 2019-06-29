@@ -1,9 +1,6 @@
 package gui;
 
 import controlador.Data;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class GUI_Login extends javax.swing.JFrame {
 
@@ -24,7 +21,7 @@ public class GUI_Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtClaveClientelogin = new javax.swing.JTextField();
-        btnInicioSesion = new javax.swing.JButton();
+        btnSiguienteLogin = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -32,10 +29,10 @@ public class GUI_Login extends javax.swing.JFrame {
 
         jLabel2.setText("Clave:");
 
-        btnInicioSesion.setText("Iniciar Sesión");
-        btnInicioSesion.addActionListener(new java.awt.event.ActionListener() {
+        btnSiguienteLogin.setText("Siguiente");
+        btnSiguienteLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioSesionActionPerformed(evt);
+                btnSiguienteLoginActionPerformed(evt);
             }
         });
 
@@ -49,9 +46,11 @@ public class GUI_Login extends javax.swing.JFrame {
                     .addComponent(txtClaveClientelogin, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                     .addComponent(txtNombreClienteLogin)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(btnInicioSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
                 .addContainerGap(130, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSiguienteLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         loginLayout.setVerticalGroup(
             loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,9 +63,8 @@ public class GUI_Login extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtClaveClientelogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addComponent(btnSiguienteLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -83,23 +81,14 @@ public class GUI_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
-       
-        try {
-            
-            String nom = txtNombreClienteLogin.getText();
-            String pass = txtClaveClientelogin.getText();//cambiar lo de la clave
+    private void btnSiguienteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteLoginActionPerformed
 
-            boolean exi = d.existeUsuario(nom, pass);
-            if (exi == true) {
-                GUI_MenuCliente cli = new GUI_MenuCliente();
-                cli.setVisible(true);
-                dispose();
-            }
-        } catch (SQLException ex) {
-            System.out.println("no se encuentra");
-        }
-    }//GEN-LAST:event_btnInicioSesionActionPerformed
+        GUI_MenuCliente cli = new GUI_MenuCliente();
+        cli.setVisible(true);
+        dispose();
+
+
+    }//GEN-LAST:event_btnSiguienteLoginActionPerformed
 
     public static void main(String args[]) {
 
@@ -111,7 +100,7 @@ public class GUI_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnInicioSesion;
+    private javax.swing.JToggleButton btnSiguienteLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel login;
@@ -119,3 +108,4 @@ public class GUI_Login extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreClienteLogin;
     // End of variables declaration//GEN-END:variables
 }
+
