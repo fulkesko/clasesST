@@ -63,7 +63,7 @@ public class Data {
         try {
             insertarTarjeta(a, b, ce, de, e);
         } catch (SQLException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("no Insertado");
         }
     }
     
