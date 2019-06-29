@@ -15,7 +15,7 @@ public class Data {
 
     private Conexion c;
      public Data() throws ClassNotFoundException, SQLException {
-        c = new Conexion("banco");
+        c = new Conexion();
     }
 
 
@@ -143,25 +143,6 @@ public class Data {
 
     public List<Usuario> Usuario()throws SQLException{
         List<Usuario> lista = new ArrayList<>();
-
-        String query = "SELECT * FROM "
-                + "Usuario";
-        
-        ResultSet rs = c.ejecutar(query);
-
-        while (rs.next()) {
-
-            Usuario h = new Usuario();
-
-            h.setId(rs.getInt(1));
-            h.setNombre(rs.getString(2));
-            h.setCiudad(rs.getString(3));
-            h.setIntprecio_por_noche(rs.getInt(4));
-
-            lista.add(h);
-        }
-
-        con.close();
 
         return lista;
     }

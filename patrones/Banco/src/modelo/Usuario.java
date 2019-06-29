@@ -6,13 +6,11 @@ public class Usuario {
     private String estado;
     private String nivelUsuario;
 
-    public Usuario(String nombre, String password, String estado, String nivelUsuario) {
-        this.nombre = nombre;
-        this.password = password;
-        this.estado = estado;
-        this.nivelUsuario = nivelUsuario;
+    public Usuario() {
+        
     }
-
+    
+    
     public String getNombre() {
         return nombre;
     }
