@@ -1,10 +1,5 @@
-
 package modelo;
 
-/**
- *
- * @author Fulvio
- */
 public class Usuario {
     private String nombre;
     private String password;

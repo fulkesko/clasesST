@@ -129,12 +129,12 @@ public class Data {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
         //usuario1, pass 123
-        String query = "SELECT COUNT(*) AS existe FROM banco.usuario WHERE nombre = '"+nom+"' AND pass = '"+pass+"' ";
+        String query = "SELECT COUNT(*) AS existe FROM usuario WHERE nombre = '"+nom+"' AND pass = '"+pass+"' ";
         ResultSet rs = c.ejecutarSelect(query);
         if(rs.next()){
             String a = rs.getString("existe");
             System.out.println(a);
-            //mejorar con boleano? comprobar despues
+            //mejorar con boleano? comprobar despues    
         }
         
         

@@ -1,13 +1,20 @@
 package gui;
 
+import controlador.Data;
 import java.awt.Menu;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class GUI_Login extends javax.swing.JFrame {
 
+    private Data d;
+
     public GUI_Login() {
         initComponents();
-        JFrame Menu = new JFrame();
+        d = new Data();
     }
 
     @SuppressWarnings("unchecked")
@@ -86,7 +93,7 @@ public class GUI_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreClienteActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtNombreClienteActionPerformed
 
     private void btnSiguienteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteLoginActionPerformed
@@ -95,12 +102,11 @@ public class GUI_Login extends javax.swing.JFrame {
         cli.setVisible(true);
         dispose();
 
-                
+
     }//GEN-LAST:event_btnSiguienteLoginActionPerformed
 
-   
     public static void main(String args[]) {
-  
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_Login().setVisible(true);
@@ -117,3 +123,4 @@ public class GUI_Login extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreCliente;
     // End of variables declaration//GEN-END:variables
 }
+
