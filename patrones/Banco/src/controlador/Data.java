@@ -14,7 +14,7 @@ import modelo.Usuario;
 public class Data {
 
     private Conexion c;
-     public Data() throws ClassNotFoundException, SQLException {
+     public Data() {
         c = new Conexion();
     }
 
