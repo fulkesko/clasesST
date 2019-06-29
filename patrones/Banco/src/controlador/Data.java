@@ -124,7 +124,7 @@ public class Data {
 
     }
 
-    public int existeUsuario(String nom, String pass) throws SQLException {
+    public boolean existeUsuario(String nom, String pass) throws SQLException {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
         //usuario1, pass 123
@@ -134,10 +134,10 @@ public class Data {
             String a = rs.getString("existe");
             System.out.println(a);
             if (a == "1") {
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 
     public List<Usuario> Usuario()throws SQLException{
