@@ -5,17 +5,19 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 import modelo.Tarjeta;
+import modelo.Usuario;
 
 public class Data {
 
-    private final Conexion c;
-
-    public Data() {
-        c = new Conexion();
+    private Conexion c;
+     public Data() throws ClassNotFoundException, SQLException {
+        c = new Conexion("banco");
     }
+
 
     public String numrandom() {
         String coorde = "";
@@ -136,6 +138,31 @@ public class Data {
             }
         }
         return 0;
+    }
+
+    public List<Usuario> Usuario()throws SQLException{
+        List<Usuario> lista = new ArrayList<>();
+
+        String query = "SELECT * FROM "
+                + "Usuario";
+        
+        ResultSet rs = c.ejecutar(query);
+
+        while (rs.next()) {
+
+            Usuario h = new Usuario();
+
+            h.setId(rs.getInt(1));
+            h.setNombre(rs.getString(2));
+            h.setCiudad(rs.getString(3));
+            h.setIntprecio_por_noche(rs.getInt(4));
+
+            lista.add(h);
+        }
+
+        con.close();
+
+        return lista;
     }
     
     

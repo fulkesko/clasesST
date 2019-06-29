@@ -1,8 +1,15 @@
 
 package gui;
+import controlador.Data;
+import modelo.Usuario;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
+import modelo.tableModel.TMClientes;
 
 public class GUI_verCliente extends javax.swing.JFrame {
-
+    private Data d;
+   
     public GUI_verCliente() {
         initComponents();
     }
@@ -20,13 +27,13 @@ public class GUI_verCliente extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -90,4 +97,10 @@ public class GUI_verCliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+private void Listar() {
+    List<Usuario> lista = d.Usuario();
+    TMClientes modelo = new TMClientes(lista);
+    jTable1.setModel(modelo);
+    }
+
 }
