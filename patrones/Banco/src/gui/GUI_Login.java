@@ -10,11 +10,11 @@ import javax.swing.JOptionPane;
 
 public class GUI_Login extends javax.swing.JFrame {
 
-    private Data d;
+    Data d = new Data();
 
     public GUI_Login() {
         initComponents();
-        d = new Data();
+    
     }
 
     @SuppressWarnings("unchecked")
@@ -22,17 +22,17 @@ public class GUI_Login extends javax.swing.JFrame {
     private void initComponents() {
 
         login = new javax.swing.JPanel();
-        txtNombreCliente = new javax.swing.JTextField();
+        txtNombreClienteLogin = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtClaveCliente = new javax.swing.JTextField();
+        txtClaveClientelogin = new javax.swing.JTextField();
         btnSiguienteLogin = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtNombreCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreClienteLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreClienteActionPerformed(evt);
+                txtNombreClienteLoginActionPerformed(evt);
             }
         });
 
@@ -54,8 +54,8 @@ public class GUI_Login extends javax.swing.JFrame {
             .addGroup(loginLayout.createSequentialGroup()
                 .addGap(129, 129, 129)
                 .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtClaveCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                    .addComponent(txtNombreCliente)
+                    .addComponent(txtClaveClientelogin, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                    .addComponent(txtNombreClienteLogin)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addContainerGap(121, Short.MAX_VALUE))
@@ -69,11 +69,11 @@ public class GUI_Login extends javax.swing.JFrame {
                 .addGap(101, 101, 101)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombreClienteLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtClaveCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtClaveClientelogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(btnSiguienteLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -92,9 +92,9 @@ public class GUI_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreClienteActionPerformed
+    private void txtNombreClienteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreClienteLoginActionPerformed
        
-    }//GEN-LAST:event_txtNombreClienteActionPerformed
+    }//GEN-LAST:event_txtNombreClienteLoginActionPerformed
 
     private void btnSiguienteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteLoginActionPerformed
 
@@ -119,8 +119,8 @@ public class GUI_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel login;
-    private javax.swing.JTextField txtClaveCliente;
-    private javax.swing.JTextField txtNombreCliente;
+    private javax.swing.JTextField txtClaveClientelogin;
+    private javax.swing.JTextField txtNombreClienteLogin;
     // End of variables declaration//GEN-END:variables
 }
 
