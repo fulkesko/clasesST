@@ -124,20 +124,21 @@ public class Data {
 
     }
 
-    public int existeUsuario(String nom, String pass) throws SQLException {
-        //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
+    public boolean existeUsuario(String nom, String pass) throws SQLException {
+                //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
         //usuario1, pass 123
         String query = "SELECT COUNT(*) AS existe FROM usuario WHERE nombre = '" + nom + "' AND pass = '" + pass + "' ";
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {
             String a = rs.getString("existe");
-            System.out.println(a);
-            if (a == "1") {
-                return 1;
+            if ("1".equals(a)) {
+                System.out.println("verdadero");
+                return true;
             }
         }
-        return 0;
+        System.out.println("falso");
+        return false;
     }
 
     public List<Usuario> Usuario()throws SQLException{

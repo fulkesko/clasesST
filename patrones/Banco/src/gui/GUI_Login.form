@@ -45,12 +45,9 @@
                       <Component id="txtNombreClienteLogin" max="32767" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnInicioSesion" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="130" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="btnSiguienteLogin" min="-2" pref="124" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -65,8 +62,9 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="txtClaveClientelogin" min="-2" pref="29" max="-2" attributes="0"/>
-                  <EmptySpace pref="100" max="32767" attributes="0"/>
-                  <Component id="btnSiguienteLogin" min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnInicioSesion" min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace pref="78" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -86,12 +84,12 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtClaveClientelogin">
         </Component>
-        <Component class="javax.swing.JToggleButton" name="btnSiguienteLogin">
+        <Component class="javax.swing.JButton" name="btnInicioSesion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Siguiente"/>
+            <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSiguienteLoginActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInicioSesionActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
