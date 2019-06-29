@@ -25,9 +25,19 @@ public class GUI_MenuBanco extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Ver CLiente");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Salir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -73,6 +83,16 @@ public class GUI_MenuBanco extends javax.swing.JFrame {
         soli.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        GUI_verCliente verCli = new GUI_verCliente();
+        verCli.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
  
