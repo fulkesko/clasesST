@@ -1,12 +1,6 @@
 package gui;
 
 import controlador.Data;
-import java.awt.Menu;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public class GUI_Login extends javax.swing.JFrame {
 
@@ -14,7 +8,8 @@ public class GUI_Login extends javax.swing.JFrame {
 
     public GUI_Login() {
         initComponents();
-    
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -29,12 +24,6 @@ public class GUI_Login extends javax.swing.JFrame {
         btnSiguienteLogin = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        txtNombreClienteLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreClienteLoginActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("Nombre Usuario:");
 
@@ -91,10 +80,6 @@ public class GUI_Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNombreClienteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreClienteLoginActionPerformed
-       
-    }//GEN-LAST:event_txtNombreClienteLoginActionPerformed
 
     private void btnSiguienteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteLoginActionPerformed
 
