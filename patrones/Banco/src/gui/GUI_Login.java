@@ -58,7 +58,7 @@ public class GUI_Login extends javax.swing.JFrame {
                     .addComponent(txtNombreClienteLogin)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnSiguienteLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
