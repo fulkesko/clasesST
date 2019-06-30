@@ -1,5 +1,5 @@
-package gui;
 
+package gui;
 import controlador.Data;
 import modelo.Usuario;
 import java.sql.SQLException;
@@ -8,13 +8,10 @@ import javax.swing.JOptionPane;
 import modelo.tableModel.TMClientes;
 
 public class GUI_verCliente extends javax.swing.JFrame {
-
     private Data d;
-
+   
     public GUI_verCliente() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -86,7 +83,7 @@ public class GUI_verCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
-
+ 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_verCliente().setVisible(true);
@@ -101,9 +98,9 @@ public class GUI_verCliente extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 private void Listar() throws SQLException {
-        List<Usuario> lista = d.Usuario();
-        TMClientes modelo = new TMClientes(lista);
-        jTable1.setModel(modelo);
+    List<Usuario> lista = d.Usuario();
+    TMClientes modelo = new TMClientes(lista);
+    jTable1.setModel(modelo);
     }
 
 }
