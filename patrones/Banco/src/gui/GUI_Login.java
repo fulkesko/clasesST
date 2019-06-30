@@ -1,12 +1,7 @@
 package gui;
 
 import controlador.Data;
-import gui.GUI_MenuBanco;
-import gui.GUI_MenuCliente;
-import gui.GUI_RegistroUsuario;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class GUI_Login extends javax.swing.JFrame {
 
