@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
+import modelo.Cliente;
 import modelo.Tarjeta;
 import modelo.Usuario;
 
@@ -128,7 +129,7 @@ public class Data {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
         //usuario1, pass 123
-        String query = "SELECT COUNT(*) AS existe FROM usuario WHERE nombre = '" + nom + "' AND pass = '" + pass + "' ";
+        String query = "SELECT COUNT(*) AS existe FROM usuario WHERE nombreUsuario = '" + nom + "' AND pass = '" + pass + "' ";
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {
             String a = rs.getString("existe");
@@ -142,7 +143,7 @@ public class Data {
     }
 
     public int comprobarNombreUsuario(String nom) throws SQLException {
-        String query = "SELECT COUNT(*) AS existeNombre FROM usuario WHERE nombre = '" + nom + "'";
+        String query = "SELECT COUNT(*) AS existeNombre FROM usuario WHERE nombreUsuario = '" + nom + "'";
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {
             String a = rs.getString("existeNombre");
@@ -182,7 +183,7 @@ public class Data {
         String query = "SELECT tipousuario.nombre as tipousuario "
                 + "FROM banco.usuario INNER JOIN tipousuario "
                 + "ON usuario.idTipoUsu = tipousuario.id "
-                + "WHERE usuario.nombre = '"+nom+"'";
+                + "WHERE usuario.nombreUsuario = '"+nom+"'";
         ResultSet rs = c.ejecutarSelect(query);
         if(rs.next()){
             String tipo = rs.getString("tipousuario");
@@ -192,6 +193,13 @@ public class Data {
     return "";
     }
     
+    public void InsertarFormulario(Cliente cli) throws SQLException{
+        
+        String query = "INSERT INTO cliente VALUES (NULL,'"+cli.getRut()+"','"+cli.getNombre()+"','"+cli.getApellido()+"','"+cli.getSueldoLiquido()+"','"+cli.getEstado()+"')";
+        System.out.println("cliente agregado como usuario");
+        c.ejecutar(query);
+        
+    }
     public List<Usuario> Usuario() throws SQLException {
         List<Usuario> lista = new ArrayList<>();
 

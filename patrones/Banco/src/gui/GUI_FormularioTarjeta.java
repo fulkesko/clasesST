@@ -1,5 +1,12 @@
 package gui;
 
+import controlador.Data;
+import static java.lang.Integer.parseInt;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.Cliente;
+
 public class GUI_FormularioTarjeta extends javax.swing.JFrame {
 
     public GUI_FormularioTarjeta() {
@@ -107,6 +114,26 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarFormularioActionPerformed
+        Cliente c = new Cliente();
+        Data d = new Data();
+        if (!"".equals(txtRunFormulario.getText())
+                && !"".equals(txtNombreFormulario.getText())
+                && !"".equals(txtSueldoFormulario.getText())
+                && !"".equals(txtApelidoFormulario.getText())) {
+                    c.setRut(txtRunFormulario.getText());
+                    c.setNombre(txtNombreFormulario.getText());
+                    c.setApellido(txtApelidoFormulario.getText());
+                    c.setSueldoLiquido(Integer.parseInt(txtSueldoFormulario.getText()));
+                    c.setEstado(0);
+                    System.out.println(c);
+            try {
+                d.InsertarFormulario(c);
+            } catch (SQLException ex) {
+                System.out.println("error en el registro");
+            }
+                    
+        }
+
         GUI_MenuCliente cli = new GUI_MenuCliente();
         cli.setVisible(true);
         dispose();
