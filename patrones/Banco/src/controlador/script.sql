@@ -58,9 +58,9 @@ FOREIGN KEY (idUsuario_fk)REFERENCES usuario(id),
 FOREIGN KEY (idUsuario2_fk)REFERENCES usuario(id)
 );
 
-INSERT INTO usuario VALUES(NULL,"222-2","Admin","123456",2);
-INSERT INTO usuario VALUES(NULL,"111-2","flavio","123",3);
 
 INSERT INTO tipousuario VALUES(NULL, "administrador");
 INSERT INTO tipousuario VALUES(NULL,"cliente");
 
+INSERT INTO usuario VALUES(NULL,"222-2","Admin","123456",1);
+INSERT INTO usuario VALUES(NULL,"111-2","flavio","123",2);
