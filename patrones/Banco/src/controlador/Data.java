@@ -14,10 +14,10 @@ import modelo.Usuario;
 public class Data {
 
     private Conexion c;
-     public Data() {
+
+    public Data() {
         c = new Conexion();
     }
-
 
     public String numrandom() {
         String coorde = "";
@@ -124,7 +124,7 @@ public class Data {
 
     }
 
-    public boolean existeUsuario(String nom, String pass) throws SQLException {
+    public int existeUsuario(String nom, String pass) throws SQLException {
         //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
         //cambiar void para entregar para afuera mientras salida por consola;
         //usuario1, pass 123
@@ -132,20 +132,70 @@ public class Data {
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {
             String a = rs.getString("existe");
-            System.out.println(a);
-            if (a == "1") {
-                return true;
+            System.out.println("existe "+a);
+            if ("1".equals(a)) {
+                System.out.println("pass y usuario correcto");
+                return 1;
             }
         }
-        return false;
+        return 0;
     }
 
-    public List<Usuario> Usuario()throws SQLException{
+    public int comprobarNombreUsuario(String nom) throws SQLException {
+        String query = "SELECT COUNT(*) AS existeNombre FROM usuario WHERE nombre = '" + nom + "'";
+        ResultSet rs = c.ejecutarSelect(query);
+        if (rs.next()) {
+            String a = rs.getString("existeNombre");
+            if ("1".equals(a)) {
+                System.out.println("solo existe el nombre");
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    public int verificacionUsuario(String nom, String pass) throws SQLException {
+        int existe = existeUsuario(nom, pass);
+        switch (existe) {
+            case(1):{
+                System.out.println("todo bien");
+                return 1;
+            }
+            case(0):{
+                int existe2 = comprobarNombreUsuario(nom);
+                if(existe2 == 1){
+                    System.out.println("existe nombre, error en la pass");
+                    return 2;
+                }
+                break;
+            }default:{
+                System.out.println("no existe ni clave ni usuario");
+                return 3;
+            }
+            
+        }
+
+        return 0;
+    }
+    
+    public  String tipoUsuario(String nom) throws SQLException{
+        String query = "SELECT tipousuario.nombre as tipousuario "
+                + "FROM banco.usuario INNER JOIN tipousuario "
+                + "ON usuario.idTipoUsu = tipousuario.id "
+                + "WHERE usuario.nombre = '"+nom+"'";
+        ResultSet rs = c.ejecutarSelect(query);
+        if(rs.next()){
+            String tipo = rs.getString("tipousuario");
+            System.out.println("tipo de usuario"+tipo);
+            return tipo;
+        }
+    return "";
+    }
+    
+    public List<Usuario> Usuario() throws SQLException {
         List<Usuario> lista = new ArrayList<>();
 
         return lista;
     }
-    
-    
-    
+
 }
