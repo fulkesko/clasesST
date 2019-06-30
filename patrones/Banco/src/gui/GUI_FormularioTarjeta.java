@@ -4,8 +4,9 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
 
     public GUI_FormularioTarjeta() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -98,7 +99,7 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarFormularioActionPerformed
-         GUI_MenuCliente cli = new GUI_MenuCliente();
+        GUI_MenuCliente cli = new GUI_MenuCliente();
         cli.setVisible(true);
         dispose();
 

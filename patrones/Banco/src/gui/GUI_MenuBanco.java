@@ -4,8 +4,9 @@ public class GUI_MenuBanco extends javax.swing.JFrame {
 
     public GUI_MenuBanco() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -95,7 +96,7 @@ public class GUI_MenuBanco extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
- 
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_MenuBanco().setVisible(true);

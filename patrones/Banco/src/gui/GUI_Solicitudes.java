@@ -4,6 +4,8 @@ public class GUI_Solicitudes extends javax.swing.JFrame {
 
     public GUI_Solicitudes() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -93,9 +95,9 @@ public class GUI_Solicitudes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    GUI_verCliente verClient = new GUI_verCliente();
-    verClient.setVisible(true);
-    dispose();
+        GUI_verCliente verClient = new GUI_verCliente();
+        verClient.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -105,7 +107,7 @@ public class GUI_Solicitudes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     public static void main(String args[]) {
-  
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_Solicitudes().setVisible(true);

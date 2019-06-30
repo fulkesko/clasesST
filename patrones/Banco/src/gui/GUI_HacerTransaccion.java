@@ -4,6 +4,8 @@ public class GUI_HacerTransaccion extends javax.swing.JFrame {
 
     public GUI_HacerTransaccion() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")

@@ -4,9 +4,10 @@ public class GUI_RegistroUsuario extends javax.swing.JFrame {
 
     public GUI_RegistroUsuario() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -96,9 +97,8 @@ public class GUI_RegistroUsuario extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
     public static void main(String args[]) {
-   
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_RegistroUsuario().setVisible(true);
