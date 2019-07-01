@@ -12,6 +12,7 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
         
     }
     public static String cumple = "";
+    public static int id = -1;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -140,6 +141,7 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
                 d.InsertarFormulario(c);
                 String cadena = d.numrandom();
                 d.generarTarjeta(cadena, c.getRut(), c.getEstado()); 
+                id = d.getId(c.getRut());
             } catch (SQLException ex) {
                 System.out.println("error en el registro");
             }

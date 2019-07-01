@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controlador;
 
 import java.util.List;
@@ -10,6 +15,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ *
+ * @author Fulvio
+ */
 public class DataTest {
     
     public DataTest() {
@@ -31,6 +40,7 @@ public class DataTest {
     public void tearDown() {
     }
 
+    /*
     @Test
     public void testNumrandom() {
         System.out.println("numrandom");
@@ -42,6 +52,7 @@ public class DataTest {
         fail("The test case is a prototype.");
     }
 
+    
     @Test
     public void testGenerarTarjeta() {
         System.out.println("generarTarjeta");
@@ -51,9 +62,10 @@ public class DataTest {
         Data instance = new Data();
         instance.generarTarjeta(cadena, rut, estado);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
+    
     @Test
     public void testInsertarTarjeta() throws Exception {
         System.out.println("insertarTarjeta");
@@ -67,7 +79,7 @@ public class DataTest {
         Data instance = new Data();
         instance.insertarTarjeta(a, b, ce, d, e, rut, estado);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     
@@ -80,23 +92,38 @@ public class DataTest {
         Tarjeta result = instance.buscarTarjeta(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
+    
+    @Test
+    public void testGetId() throws Exception {
+        System.out.println("getId");
+        String rut = "";
+        Data instance = new Data();
+        int expResult = 0;
+        int result = instance.getId(rut);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+      
+    }
+
+    */
     @Test
     public void testVerificacionUsuario() throws Exception {
         System.out.println("verificacionUsuario");
         String nom = "";
         String pass = "";
         Data instance = new Data();
-        int expResult = 0;
+        //cuando no existe
+        int expResult = 3;
         int result = instance.verificacionUsuario(nom, pass);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
- 
+   
     @Test
     public void testTipoUsuario() throws Exception {
         System.out.println("tipoUsuario");
@@ -106,23 +133,21 @@ public class DataTest {
         String result = instance.tipoUsuario(nom);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
-
-    /**
-     * Test of InsertarFormulario method, of class Data.
-     */
+    /*
+   
     @Test
     public void testInsertarFormulario() throws Exception {
         System.out.println("InsertarFormulario");
-        Cliente cli = null;
+        Cliente cli = new Cliente();
         Data instance = new Data();
         instance.InsertarFormulario(cli);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
-  
+    
     @Test
     public void testGetClientes() throws Exception {
         System.out.println("getClientes");
@@ -131,7 +156,7 @@ public class DataTest {
         List<Cliente> result = instance.getClientes();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
-    
+    */
 }

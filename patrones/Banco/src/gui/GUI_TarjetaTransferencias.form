@@ -30,6 +30,10 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblb1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -40,6 +44,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -50,6 +58,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -60,6 +72,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -70,6 +86,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -80,6 +100,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla7">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -90,6 +114,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla8">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -100,6 +128,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -110,16 +142,24 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="120" width="-1" height="30"/>
+          <AbsoluteConstraints x="130" y="120" width="-1" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblb2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -130,6 +170,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblb3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -140,6 +184,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblb4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -148,18 +196,26 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl10">
+    <Component class="javax.swing.JLabel" name="lbla10">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="750" y="110" width="60" height="40"/>
+          <AbsoluteConstraints x="740" y="110" width="60" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblb5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -170,6 +226,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblb6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -180,6 +240,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblb7">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -190,6 +254,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblb8">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -200,6 +268,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblb9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -210,6 +282,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblb10">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -220,6 +296,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -230,6 +310,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -240,6 +324,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -250,6 +338,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -260,6 +352,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -270,6 +366,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -280,6 +380,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -290,6 +394,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -300,6 +408,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -310,6 +422,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -320,6 +436,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -330,6 +450,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -340,6 +464,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -350,6 +478,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -360,6 +492,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -370,6 +506,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -380,6 +520,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -390,6 +534,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -400,6 +548,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc7">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -410,6 +562,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld7">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -420,6 +576,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble7">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -430,6 +590,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc8">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -440,6 +604,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld8">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -450,6 +618,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble8">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -460,6 +632,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -470,6 +646,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -480,6 +660,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -490,6 +674,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblc10">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -500,6 +688,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbld10">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -510,6 +702,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lble10">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -520,6 +716,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbla2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
       <Constraints>
@@ -538,6 +738,19 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="600" y="450" width="160" height="40"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtId">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="180" y="420" width="150" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

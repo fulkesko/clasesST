@@ -35,7 +35,7 @@ public class Data {
         return coorde;
     }
 
-    public void generarTarjeta(String cadena,String rut,int estado) {
+    public void generarTarjeta(String cadena, String rut, int estado) {
         String a = "";
         String b = "";
         String ce = "";
@@ -61,15 +61,15 @@ public class Data {
             }
         }
         try {
-            insertarTarjeta(a, b, ce, de, e,rut ,estado);
+            insertarTarjeta(a, b, ce, de, e, rut, estado);
         } catch (SQLException ex) {
             System.out.println("no Insertado");
         }
     }
 
-    public void insertarTarjeta(String a, String b, String ce, String d, String e,String rut,int estado) throws SQLException {
+    public void insertarTarjeta(String a, String b, String ce, String d, String e, String rut, int estado) throws SQLException {
         //pasar por parametro el usuario id y estado
-        String query = "INSERT INTO tarjeta VALUES (NULL,'" + a + "','" + b + "','" + ce + "','" + d + "','" + e + "',(SELECT id FROM cliente WHERE rut = '"+rut+"'),'"+estado+"')";
+        String query = "INSERT INTO tarjeta VALUES (NULL,'" + a + "','" + b + "','" + ce + "','" + d + "','" + e + "',(SELECT id FROM cliente WHERE rut = '" + rut + "'),'" + estado + "')";
         //falta comprobar ya existente     
         System.out.println("tarjeta creada");
         c.ejecutar(query);
@@ -79,8 +79,8 @@ public class Data {
     //clase tarjeta
     public Tarjeta buscarTarjeta(int id) throws SQLException {
         //falta recibir parametros para la busqueda WHERE codigo '"+id de tarjeta+"'
-        String query = "SELECT * FROM banco.tarjeta WHERE cliente_id_fk = '" + id + "'";
-
+        String query = "SELECT * FROM banco.tarjeta WHERE cliente_id_fk = '" +id+ "'";
+        System.out.println(query);
         ResultSet rs = c.ejecutarSelect(query);
         Tarjeta tar = new Tarjeta();
         ArrayList la = new ArrayList();
@@ -88,12 +88,15 @@ public class Data {
         ArrayList lc = new ArrayList();
         ArrayList ld = new ArrayList();
         ArrayList le = new ArrayList();
+      
         while (rs.next()) {
+            
             tar.setId(rs.getInt("id"));
+           
             //cambiar para obtener rut del cliente
-            tar.setUsuario(rs.getString("usuario_id_fk"));
+            tar.setUsuario(rs.getString("cliente_id_fk"));
             tar.setEstado(rs.getInt("estado"));
-
+            
             String coorA = rs.getString("a");
             String[] cordeA = coorA.split("/");
             la.addAll(Arrays.asList(cordeA));
@@ -118,24 +121,33 @@ public class Data {
             String[] cordeE = coorE.split("/");
             le.addAll(Arrays.asList(cordeE));
             tar.setLetraE(le);
-
-            System.out.println("se obtuvo");
+            
+            
+            
 
         }
+        
         return tar;
 
     }
 
-    
-    
-    
-    private int existeUsuario(String nom, String pass) throws SQLException {
+    public int getId(String rut) throws SQLException {
+        String query = "SELECT cliente.id as id FROM cliente WHERE rut = '" + rut + "'";
+        ResultSet rs = c.ejecutarSelect(query);
+        if (rs.next()) {
+            int id = rs.getInt("id");
+            return id;
+        }
+        return -1;
+    }
+
+    public int existeUsuario(String nom, String pass) throws SQLException {
         //pruebas
         String query = "SELECT COUNT(*) AS existe FROM usuario WHERE nombreUsuario = '" + nom + "' AND pass = '" + pass + "' ";
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {
             String a = rs.getString("existe");
-            System.out.println("existe "+a);
+            System.out.println("existe " + a);
             if ("1".equals(a)) {
                 System.out.println("pass y usuario correcto");
                 return 1;
@@ -143,8 +155,10 @@ public class Data {
         }
         return 0;
     }
+
     //para las pruebas
-    private int comprobarNombreUsuario(String nom) throws SQLException {
+
+    public int comprobarNombreUsuario(String nom) throws SQLException {
         String query = "SELECT COUNT(*) AS existeNombre FROM usuario WHERE nombreUsuario = '" + nom + "'";
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {
@@ -160,77 +174,71 @@ public class Data {
     public int verificacionUsuario(String nom, String pass) throws SQLException {
         int existe = existeUsuario(nom, pass);
         switch (existe) {
-            case(1):{
+            case (1): {
                 System.out.println("todo bien");
                 return 1;
             }
-            case(0):{
+            case (0): {
                 int existe2 = comprobarNombreUsuario(nom);
-                if(existe2 == 1){
+                if (existe2 == 1) {
                     System.out.println("existe nombre, error en la pass");
                     return 2;
                 }
-            }default:{
+            }
+            default: {
                 System.out.println("no existe ni clave ni usuario");
                 return 3;
             }
-            
+
         }
 
-       
     }
-    
-    public  String tipoUsuario(String nom) throws SQLException{
+
+    public String tipoUsuario(String nom) throws SQLException {
         String query = "SELECT tipousuario.nombre as tipousuario "
                 + "FROM banco.usuario INNER JOIN tipousuario "
                 + "ON usuario.idTipoUsu = tipousuario.id "
-                + "WHERE usuario.nombreUsuario = '"+nom+"'";
+                + "WHERE usuario.nombreUsuario = '" + nom + "'";
         ResultSet rs = c.ejecutarSelect(query);
-        if(rs.next()){
+        if (rs.next()) {
             String tipo = rs.getString("tipousuario");
-            System.out.println("tipo de usuario"+tipo);
+            System.out.println("tipo de usuario" + tipo);
             return tipo;
         }
-    return "";
+        return "";
     }
-    
-    public void InsertarFormulario(Cliente cli) throws SQLException{
-        
-        String query = "INSERT INTO cliente VALUES (NULL,'"+cli.getRut()+"','"+cli.getNombre()+"','"+cli.getApellido()+"','"+cli.getSueldoLiquido()+"','"+cli.getEstado()+"')";
+
+    public void InsertarFormulario(Cliente cli) throws SQLException {
+
+        String query = "INSERT INTO cliente VALUES (NULL,'" + cli.getRut() + "','" + cli.getNombre() + "','" + cli.getApellido() + "','" + cli.getSueldoLiquido() + "','" + cli.getEstado() + "')";
         System.out.println("cliente agregado como usuario");
         c.ejecutar(query);
-        
+
     }
+
     public List<Cliente> getClientes() throws SQLException {
         List<Cliente> lista = new ArrayList<>();
-        
-        String query = "SELECT * FROM cliente;";
-        
+
+        String query = "SELECT * FROM cliente WHERE estado = 0";
+
         ResultSet rs = c.ejecutarSelect(query);
-        
-        while(rs.next()){
+
+        while (rs.next()) {
             Cliente usu = new Cliente();
-            System.out.println("1111111111111111111111");
+
             usu.setRut(rs.getString("rut"));
-            System.out.println("Rut: "+rs.getString("rut"));
+
             usu.setNombre(rs.getString("nombre"));
             usu.setApellido(rs.getString("apellido"));
             usu.setSueldoLiquido(rs.getInt("sueldo_liquido"));
             usu.setEstado(rs.getInt("estado"));
-            
+
             lista.add(usu);
         }
-        
+
         return lista;
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
 // me base en esto
 //public List<Usuario> usuario() throws SQLException {
 //        List<Usuario> lista = new ArrayList<>();
@@ -255,9 +263,4 @@ public class Data {
 //
 //        return lista;
 //    }
-
-
 }
-
-
-
