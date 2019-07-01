@@ -5,11 +5,11 @@ import modelo.Usuario;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
+import modelo.Cliente;
 import modelo.tableModel.TMClientes;
 
 public class GUI_verCliente extends javax.swing.JFrame {
     private Data d;
-    private Usuario usu;
    
     public GUI_verCliente() {
         initComponents();
@@ -101,7 +101,7 @@ public class GUI_verCliente extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
      private void Listar() {
         try {
-            List<Usuario>  lista = d.Usuario();
+            List<Cliente>  lista = d.Cliente();
             TMClientes modelo = new TMClientes(lista);
             jTable1.setModel(modelo);
         } catch (SQLException ex) {

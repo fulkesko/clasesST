@@ -200,26 +200,35 @@ public class Data {
         c.ejecutar(query);
         
     }
-    public List<Usuario> Usuario() throws SQLException {
-        List<Usuario> lista = new ArrayList<>();
+    public List<Cliente> Cliente() throws SQLException {
+        List<Cliente> lista = new ArrayList<>();
         
         String query = "SELECT * FROM usuario";
         
         ResultSet rs = c.ejecutarSelect(query);
         
         while(rs.next()){
-            Usuario usu = new Usuario();
+            Cliente usu = new Cliente();
             
-            usu.setNombre(rs.getNString(1));
-            usu.setEstado(rs.getNString(2));
-            usu.setPassword(rs.getNString(3));
-            usu.setNivelUsuario(rs.getNString(4));
+            usu.setRut(rs.getNString(1));
+            usu.setNombre(rs.getNString(2));
+            usu.setApellido(rs.getNString(3));
+            usu.setSueldoLiquido(rs.getInt(4));
+            usu.setEstado(rs.getInt(5));
             
             lista.add(usu);
         }
         
         return lista;
     }
+    
+    
+    
+    
+    
+    
+    
+    
 // me base en esto
 //public List<Usuario> usuario() throws SQLException {
 //        List<Usuario> lista = new ArrayList<>();

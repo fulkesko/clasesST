@@ -2,12 +2,12 @@ package modelo.tableModel;
 
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import modelo.Usuario;
+import modelo.Cliente;
 
 public class TMClientes extends AbstractTableModel{
-    private List<Usuario> lista;
+    private List<Cliente> lista;
 
-    public TMClientes(List<Usuario> lista) {
+    public TMClientes(List<Cliente> lista) {
         this.lista = lista;
     }
 
@@ -18,24 +18,26 @@ public class TMClientes extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 5;
     }
 
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-       Usuario ht = lista.get(rowIndex);
+       Cliente ht = lista.get(rowIndex);
 
         switch (columnIndex) {
             case 0:
-                return ht.getNombre();
+                return ht.getRut();
             case 1:
-                 return ht.getEstado();
+                 return ht.getNombre();
             case 2:
-                return ht.getPassword();
+                return ht.getApellido();
+            case 3:
+                return ht.getSueldoLiquido();
                
             default:
-                return ht.getNivelUsuario();
+                return ht.getEstado();
 
         }
 
@@ -44,13 +46,15 @@ public class TMClientes extends AbstractTableModel{
     public String getColumnName(int column) {
         switch (column) {
             case 0:
-                return "Nombre";
+                return "Rut";
             case 1:
-                return "Estado";
+                return "Nombre";
             case 2:
-                return "Password";
+                return "Apellido";
+            case 3:
+                return "Sueldo";
             default:
-                return "Nivel Usuario";
+                return "Estado";
             
                 
         }
