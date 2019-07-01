@@ -1,10 +1,7 @@
 package gui;
 
 import controlador.Data;
-import static java.lang.Integer.parseInt;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.Cliente;
 
 public class GUI_FormularioTarjeta extends javax.swing.JFrame {
@@ -12,9 +9,9 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
     public GUI_FormularioTarjeta() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        
     }
-
+    public static String cumple = "";
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -120,26 +117,32 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
                 && !"".equals(txtNombreFormulario.getText())
                 && !"".equals(txtSueldoFormulario.getText())
                 && !"".equals(txtApelidoFormulario.getText())) {
-                    c.setRut(txtRunFormulario.getText());
-                    c.setNombre(txtNombreFormulario.getText());
-                    c.setApellido(txtApelidoFormulario.getText());
-                    c.setSueldoLiquido(Integer.parseInt(txtSueldoFormulario.getText()));
-                    c.setEstado(0);
-                    System.out.println(c);
-                    
+            c.setRut(txtRunFormulario.getText());
+            c.setNombre(txtNombreFormulario.getText());
+            c.setApellido(txtApelidoFormulario.getText());
+
+            if (Integer.parseInt(txtSueldoFormulario.getText()) < 400000) {
+                c.setSueldoLiquido(Integer.parseInt(txtSueldoFormulario.getText()));
+                c.setEstado(0);
+                cumple = "falta revision";
+            } else {
+                c.setSueldoLiquido(Integer.parseInt(txtSueldoFormulario.getText()));
+                c.setEstado(1);
+                cumple = "Tarjeta Lista";
+            }
+
+            System.out.println(c);
+            GUI_MenuCliente cli = new GUI_MenuCliente();
+            cli.setVisible(true);
+            dispose();
             try {
                 d.InsertarFormulario(c);
             } catch (SQLException ex) {
                 System.out.println("error en el registro");
             }
-                    
-        }
-        
-        
 
-        GUI_MenuCliente cli = new GUI_MenuCliente();
-        cli.setVisible(true);
-        dispose();
+        }
+
 
     }//GEN-LAST:event_btnRegistrarFormularioActionPerformed
 

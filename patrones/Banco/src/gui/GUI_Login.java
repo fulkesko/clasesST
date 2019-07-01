@@ -10,9 +10,9 @@ public class GUI_Login extends javax.swing.JFrame {
     public GUI_Login() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        
     }
-
+    public static String usuario = "";
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -97,8 +97,11 @@ public class GUI_Login extends javax.swing.JFrame {
                 case (1): {
                     String tipo = d.tipoUsuario(nom);
                     if ("cliente".equals(tipo)) {
+                        usuario = txtNombreClienteLogin.getText();
                         GUI_MenuCliente cli = new GUI_MenuCliente();
+                        
                         cli.setVisible(true);
+                        
                         dispose();
                         break;
                     }

@@ -125,10 +125,8 @@ public class Data {
 
     }
 
-    public int existeUsuario(String nom, String pass) throws SQLException {
-        //cambiar el SELECT COUNT(*) FROM banco.usuario ; 
-        //cambiar void para entregar para afuera mientras salida por consola;
-        //usuario1, pass 123
+    private int existeUsuario(String nom, String pass) throws SQLException {
+        //pruebas
         String query = "SELECT COUNT(*) AS existe FROM usuario WHERE nombreUsuario = '" + nom + "' AND pass = '" + pass + "' ";
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {
@@ -141,8 +139,8 @@ public class Data {
         }
         return 0;
     }
-
-    public int comprobarNombreUsuario(String nom) throws SQLException {
+    //para las pruebas
+    private int comprobarNombreUsuario(String nom) throws SQLException {
         String query = "SELECT COUNT(*) AS existeNombre FROM usuario WHERE nombreUsuario = '" + nom + "'";
         ResultSet rs = c.ejecutarSelect(query);
         if (rs.next()) {

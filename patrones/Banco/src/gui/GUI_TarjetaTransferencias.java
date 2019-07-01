@@ -1,6 +1,4 @@
-
 package gui;
-
 
 public class GUI_TarjetaTransferencias extends javax.swing.JFrame {
 
@@ -9,6 +7,8 @@ public class GUI_TarjetaTransferencias extends javax.swing.JFrame {
      */
     public GUI_TarjetaTransferencias() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     /**
@@ -70,6 +70,7 @@ public class GUI_TarjetaTransferencias extends javax.swing.JFrame {
         lbld10 = new javax.swing.JLabel();
         lble10 = new javax.swing.JLabel();
         lbla2 = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -226,6 +227,14 @@ public class GUI_TarjetaTransferencias extends javax.swing.JFrame {
         lbla2.setText("jLabel2");
         getContentPane().add(lbla2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 60, 30));
 
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 160, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fulvio\\source\\clases\\clasesST\\patrones\\Banco\\src\\img\\Transferencias.png")); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setMaximumSize(new java.awt.Dimension(860, 550));
@@ -235,6 +244,12 @@ public class GUI_TarjetaTransferencias extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        GUI_MenuCliente cli = new GUI_MenuCliente();
+        cli.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,7 +278,7 @@ public class GUI_TarjetaTransferencias extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_TarjetaTransferencias().setVisible(true);
@@ -272,6 +287,7 @@ public class GUI_TarjetaTransferencias extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl10;
     private javax.swing.JLabel lbla1;

@@ -71,7 +71,7 @@ public class DataTest {
         System.out.println("buscarTarjeta");
         int id = 0;
         Data instance = new Data();
-        Tarjeta expResult = null;
+        Tarjeta expResult = new Tarjeta();
         Tarjeta result = instance.buscarTarjeta(id);
         assertEquals(expResult, result);
 
