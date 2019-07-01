@@ -203,7 +203,7 @@ public class Data {
     public List<Cliente> Cliente() throws SQLException {
         List<Cliente> lista = new ArrayList<>();
         
-        String query = "SELECT * FROM usuario";
+        String query = "SELECT * FROM cliente";
         
         ResultSet rs = c.ejecutarSelect(query);
         
