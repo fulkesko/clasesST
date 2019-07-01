@@ -30,7 +30,10 @@ public class TMClientes extends AbstractTableModel{
             case 0:
                 return ht.getNombre();
             case 1:
-                return ht.getEstado();
+                 return ht.getEstado();
+            case 2:
+                return ht.getPassword();
+               
             default:
                 return ht.getNivelUsuario();
 
@@ -44,6 +47,8 @@ public class TMClientes extends AbstractTableModel{
                 return "Nombre";
             case 1:
                 return "Estado";
+            case 2:
+                return "Password";
             default:
                 return "Nivel Usuario";
             

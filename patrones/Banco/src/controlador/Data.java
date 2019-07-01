@@ -202,8 +202,51 @@ public class Data {
     }
     public List<Usuario> Usuario() throws SQLException {
         List<Usuario> lista = new ArrayList<>();
-
+        
+        String query = "SELECT * FROM usuario";
+        
+        ResultSet rs = c.ejecutarSelect(query);
+        
+        while(rs.next()){
+            Usuario usu = new Usuario();
+            
+            usu.setNombre(rs.getNString(1));
+            usu.setEstado(rs.getNString(2));
+            usu.setPassword(rs.getNString(3));
+            usu.setNivelUsuario(rs.getNString(4));
+            
+            lista.add(usu);
+        }
+        
         return lista;
     }
+// me base en esto
+//public List<Usuario> usuario() throws SQLException {
+//        List<Usuario> lista = new ArrayList<>();
+//
+//        String query = "SELECT * FROM usuario ";
+//        
+//        ResultSet rs = c.ejecutar(query);
+//
+//        while (rs.next()) {
+//
+//            Usuario h = new Usuario();
+//
+//            h.setNombre(rs.getInt(1));
+//            h.setEstado(;rs.getString(2));
+//            h.setPassword(rs.getString(3));
+//            h.setNivelUsuario(rs.getInt(4));
+//
+//            lista.add(h);
+//        }
+//
+//        con.close();
+//
+//        return lista;
+//    }
+
 
 }
+
+
+

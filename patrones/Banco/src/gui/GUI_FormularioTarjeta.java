@@ -126,6 +126,7 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
                     c.setSueldoLiquido(Integer.parseInt(txtSueldoFormulario.getText()));
                     c.setEstado(0);
                     System.out.println(c);
+                    
             try {
                 d.InsertarFormulario(c);
             } catch (SQLException ex) {
@@ -133,6 +134,8 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
             }
                     
         }
+        
+        
 
         GUI_MenuCliente cli = new GUI_MenuCliente();
         cli.setVisible(true);

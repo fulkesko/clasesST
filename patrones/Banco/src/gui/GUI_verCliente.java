@@ -9,9 +9,11 @@ import modelo.tableModel.TMClientes;
 
 public class GUI_verCliente extends javax.swing.JFrame {
     private Data d;
+    private Usuario usu;
    
     public GUI_verCliente() {
         initComponents();
+        Listar();
     }
 
     @SuppressWarnings("unchecked")
@@ -97,10 +99,14 @@ public class GUI_verCliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-private void Listar() throws SQLException {
-    List<Usuario> lista = d.Usuario();
-    TMClientes modelo = new TMClientes(lista);
-    jTable1.setModel(modelo);
+     private void Listar() {
+        try {
+            List<Usuario>  lista = d.Usuario();
+            TMClientes modelo = new TMClientes(lista);
+            jTable1.setModel(modelo);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }
 
 }
