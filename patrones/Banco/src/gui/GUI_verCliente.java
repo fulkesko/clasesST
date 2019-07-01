@@ -1,7 +1,6 @@
 
 package gui;
 import controlador.Data;
-import modelo.Usuario;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -13,7 +12,9 @@ public class GUI_verCliente extends javax.swing.JFrame {
    
     public GUI_verCliente() {
         initComponents();
+        System.out.println("0000000000");
         Listar();
+        System.out.println("7777777777777");
     }
 
     @SuppressWarnings("unchecked")
@@ -101,7 +102,8 @@ public class GUI_verCliente extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
      private void Listar() {
         try {
-            List<Cliente>  lista = d.Cliente();
+            d = new Data();
+            List<Cliente>  lista = d.getClientes();
             TMClientes modelo = new TMClientes(lista);
             jTable1.setModel(modelo);
         } catch (SQLException ex) {

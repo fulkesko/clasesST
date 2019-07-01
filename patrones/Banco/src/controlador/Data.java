@@ -166,7 +166,6 @@ public class Data {
                     System.out.println("existe nombre, error en la pass");
                     return 2;
                 }
-                break;
             }default:{
                 System.out.println("no existe ni clave ni usuario");
                 return 3;
@@ -174,7 +173,7 @@ public class Data {
             
         }
 
-        return 0;
+       
     }
     
     public  String tipoUsuario(String nom) throws SQLException{
@@ -198,17 +197,18 @@ public class Data {
         c.ejecutar(query);
         
     }
-    public List<Cliente> Cliente() throws SQLException {
+    public List<Cliente> getClientes() throws SQLException {
         List<Cliente> lista = new ArrayList<>();
         
-        String query = "SELECT * FROM cliente";
+        String query = "SELECT * FROM cliente;";
         
         ResultSet rs = c.ejecutarSelect(query);
         
         while(rs.next()){
             Cliente usu = new Cliente();
-            
+            System.out.println("1111111111111111111111");
             usu.setRut(rs.getString("rut"));
+            System.out.println("Rut: "+rs.getString("rut"));
             usu.setNombre(rs.getString("nombre"));
             usu.setApellido(rs.getString("apellido"));
             usu.setSueldoLiquido(rs.getInt("sueldo_liquido"));

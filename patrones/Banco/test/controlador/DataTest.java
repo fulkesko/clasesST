@@ -77,7 +77,7 @@ public class DataTest {
 
     }
 
-
+//cambiar ver privados
     @Test
     public void testExisteUsuario() throws Exception {
         System.out.println("existeUsuario");
@@ -90,7 +90,7 @@ public class DataTest {
 
     }
 
-  
+  //cambiar ver privados
     @Test
     public void testComprobarNombreUsuario() throws Exception {
         System.out.println("comprobarNombreUsuario");
@@ -140,7 +140,7 @@ public class DataTest {
         System.out.println("Cliente");
         Data instance = new Data();
         List<Cliente> expResult = null;
-        List<Cliente> result = instance.Cliente();
+        List<Cliente> result = instance.getClientes();
         assertEquals(expResult, result);
 
     }
