@@ -103,7 +103,9 @@ public class GUI_MenuCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarjetaActionPerformed
-
+        GUI_TarjetaTransferencias tarjeta =new GUI_TarjetaTransferencias();
+        tarjeta.setVisible(true);
+       
     }//GEN-LAST:event_btnTarjetaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
