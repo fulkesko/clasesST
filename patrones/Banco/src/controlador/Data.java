@@ -10,7 +10,6 @@ import java.util.Random;
 import java.util.stream.IntStream;
 import modelo.Cliente;
 import modelo.Tarjeta;
-import modelo.Usuario;
 
 public class Data {
 
@@ -211,11 +210,11 @@ public class Data {
         while(rs.next()){
             Cliente usu = new Cliente();
             
-            usu.setRut(rs.getString("rut"));
-            usu.setNombre(rs.getString("nombre"));
-            usu.setApellido(rs.getString("apellido"));
-            usu.setSueldoLiquido(rs.getInt("sueldo_liquido"));
-            usu.setEstado(rs.getInt("estado"));
+            usu.setRut(rs.getString("cliente.rut"));
+            usu.setNombre(rs.getString("cliente.nombre"));
+            usu.setApellido(rs.getString("cliente.apellido"));
+            usu.setSueldoLiquido(rs.getInt("cliente.sueldo_liquido"));
+            usu.setEstado(rs.getInt("cliente.estado"));
             
             lista.add(usu);
         }
