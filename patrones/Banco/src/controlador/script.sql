@@ -62,3 +62,4 @@ INSERT INTO tipousuario VALUES(NULL,"cliente");
 INSERT INTO usuario VALUES(NULL,"Admin","123456",1);
 INSERT INTO usuario VALUES(NULL,"flavio","123",2);
 
+INSERT INTO cliente VALUES(NULL,"12333456-1","ismael","Quintana",400000,1);
