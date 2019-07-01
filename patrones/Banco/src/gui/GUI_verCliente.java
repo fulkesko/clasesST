@@ -105,6 +105,7 @@ public class GUI_verCliente extends javax.swing.JFrame {
             TMClientes modelo = new TMClientes(lista);
             jTable1.setModel(modelo);
         } catch (SQLException ex) {
+            System.out.println("error carnal");
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }

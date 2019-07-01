@@ -210,11 +210,11 @@ public class Data {
         while(rs.next()){
             Cliente usu = new Cliente();
             
-            usu.setRut(rs.getNString(1));
-            usu.setNombre(rs.getNString(2));
-            usu.setApellido(rs.getNString(3));
-            usu.setSueldoLiquido(rs.getInt(4));
-            usu.setEstado(rs.getInt(5));
+            usu.setRut(rs.getString("rut"));
+            usu.setNombre(rs.getString("nombre"));
+            usu.setApellido(rs.getString("apellido"));
+            usu.setSueldoLiquido(rs.getInt("sueldo_liquido"));
+            usu.setEstado(rs.getInt("estado"));
             
             lista.add(usu);
         }
