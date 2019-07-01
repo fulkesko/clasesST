@@ -138,6 +138,8 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
             dispose();
             try {
                 d.InsertarFormulario(c);
+                String cadena = d.numrandom();
+                d.generarTarjeta(cadena, c.getRut(), c.getEstado()); 
             } catch (SQLException ex) {
                 System.out.println("error en el registro");
             }

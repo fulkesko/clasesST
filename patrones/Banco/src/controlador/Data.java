@@ -76,6 +76,7 @@ public class Data {
 
     }
 
+    //clase tarjeta
     public Tarjeta buscarTarjeta(int id) throws SQLException {
         //falta recibir parametros para la busqueda WHERE codigo '"+id de tarjeta+"'
         String query = "SELECT * FROM banco.tarjeta WHERE cliente_id_fk = '" + id + "'";
@@ -125,6 +126,9 @@ public class Data {
 
     }
 
+    
+    
+    
     private int existeUsuario(String nom, String pass) throws SQLException {
         //pruebas
         String query = "SELECT COUNT(*) AS existe FROM usuario WHERE nombreUsuario = '" + nom + "' AND pass = '" + pass + "' ";
