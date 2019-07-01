@@ -203,8 +203,7 @@ public class Data {
     public List<Cliente> Cliente() throws SQLException {
         List<Cliente> lista = new ArrayList<>();
         
-        String query = "SELECT cliente.rut, cliente.nombre, cliente.apellido,"
-                + " cliente.sueldo_liquido, cliente.estado FROM cliente";
+        String query = "SELECT * FROM cliente";
         
         ResultSet rs = c.ejecutarSelect(query);
         
@@ -219,7 +218,7 @@ public class Data {
             
             lista.add(usu);
         }
-        System.out.println(lista);
+        
         return lista;
     }
     
