@@ -35,7 +35,7 @@ public class Data {
         return coorde;
     }
 
-    public void generarTarjeta(String cadena) {
+    public void generarTarjeta(String cadena,String rut,int estado) {
         String a = "";
         String b = "";
         String ce = "";
@@ -61,15 +61,15 @@ public class Data {
             }
         }
         try {
-            insertarTarjeta(a, b, ce, de, e);
+            insertarTarjeta(a, b, ce, de, e,rut ,estado);
         } catch (SQLException ex) {
             System.out.println("no Insertado");
         }
     }
 
-    public void insertarTarjeta(String a, String b, String ce, String d, String e) throws SQLException {
+    public void insertarTarjeta(String a, String b, String ce, String d, String e,String rut,int estado) throws SQLException {
         //pasar por parametro el usuario id y estado
-        String query = "INSERT INTO tarjeta VALUES (NULL,'" + a + "','" + b + "','" + ce + "','" + d + "','" + e + "',1,1)";
+        String query = "INSERT INTO tarjeta VALUES (NULL,'" + a + "','" + b + "','" + ce + "','" + d + "','" + e + "',(SELECT id FROM cliente WHERE rut = '"+rut+"'),'"+estado+"')";
         //falta comprobar ya existente     
         System.out.println("tarjeta creada");
         c.ejecutar(query);
@@ -78,7 +78,7 @@ public class Data {
 
     public Tarjeta buscarTarjeta(int id) throws SQLException {
         //falta recibir parametros para la busqueda WHERE codigo '"+id de tarjeta+"'
-        String query = "SELECT * FROM banco.tarjeta WHERE id = '" + id + "'";
+        String query = "SELECT * FROM banco.tarjeta WHERE cliente_id_fk = '" + id + "'";
 
         ResultSet rs = c.ejecutarSelect(query);
         Tarjeta tar = new Tarjeta();

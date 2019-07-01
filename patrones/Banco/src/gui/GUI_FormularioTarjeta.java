@@ -129,6 +129,7 @@ public class GUI_FormularioTarjeta extends javax.swing.JFrame {
                 c.setSueldoLiquido(Integer.parseInt(txtSueldoFormulario.getText()));
                 c.setEstado(1);
                 cumple = "Tarjeta Lista";
+                
             }
 
             System.out.println(c);
