@@ -219,7 +219,7 @@ public class Data {
             lista.add(usu);
         }
         
-        return lista;s
+        return lista;
     }
     
     
