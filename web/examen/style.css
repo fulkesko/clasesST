@@ -1,0 +1,14 @@
+#barra{
+    align-content: center;
+    background-color: peachpuff;
+}
+#izquierdo{
+    float: left;
+    margin-left: 25px;
+}
+#centro{
+    text-align: center;
+}
+#derecho{
+    text-align: right
+}

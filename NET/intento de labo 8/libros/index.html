@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>libreria</title>
+</head>
+<body>
+        <div class="panel-heading">
+                <span>{{country.name}}</span>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">Capital: <strong>{{country.capital}}</strong></div>
+                <div class="col-md-6">Region: <strong>{{country.region}}</strong></div>
+            </div> 
+            <div class="row">
+                <div class="col-md-6">Currency: <strong>{{country.currencies[0].name}} ({{country.currencies[0].symbol}})</strong></div>
+                <div class="col-md-6">Population: <strong >{{country.population}}</strong></div>
+            </div>
+        </div>
+       
+    <script src="vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

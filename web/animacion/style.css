@@ -1,0 +1,21 @@
+#izquierdo{
+    float: left;
+    width: 200px;
+    padding-left: 200px;
+    padding: 100px;
+    background-color: red;
+    
+}
+#primero{
+    text-align: center;
+    
+}
+#boton1{
+    text-align: center;
+}
+#derecho{
+    float:left;
+    width: 200px;
+    background:#fc0;
+    padding: 100px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ejemplo Servicio</title>
+</head>
+<body>
+<form id="main" v-cloak>
+
+    <h1>Servicios</h1>
+
+    <ul>
+       
+        <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active': service.active}">
+           
+            {{service.name}} <span>{{service.price | currency}}</span>
+        </li>
+    </ul>
+
+    <div class="total">
+        Total: <span>{{total() | currency}}</span>
+    </div>
+
+</form>
+<link rel="stylesheet" href="style.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+<script src="menu.js"></script>
+</body>
+</html>
