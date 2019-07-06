@@ -127,9 +127,9 @@ public class DataTest {
     @Test
     public void testTipoUsuario() throws Exception {
         System.out.println("tipoUsuario");
-        String nom = "";
+        String nom = "administrador";
         Data instance = new Data();
-        String expResult = "";
+        String expResult = "administrador";
         String result = instance.tipoUsuario(nom);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
