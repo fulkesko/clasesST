@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bd_MatasanosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="agenda">
+    <Key>
+      <PropertyRef Name="id_agenda" />
+    </Key>
+    <Property Name="id_agenda" Type="int" Nullable="false" />
+    <Property Name="rut_usuario" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="hora_agenda" Type="datetime" Nullable="false" />
+    <Property Name="confirmado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cargo">
+    <Key>
+      <PropertyRef Name="id_cargo" />
+    </Key>
+    <Property Name="id_cargo" Type="int" Nullable="false" />
+    <Property Name="nombres_cargo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="detalle_informe">
+    <Key>
+      <PropertyRef Name="id_detalle" />
+    </Key>
+    <Property Name="id_detalle" Type="int" Nullable="false" />
+    <Property Name="id_informe" Type="int" Nullable="false" />
+    <Property Name="observacion_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha_registro" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="especialidad">
+    <Key>
+      <PropertyRef Name="id_especialidad" />
+    </Key>
+    <Property Name="id_especialidad" Type="int" Nullable="false" />
+    <Property Name="nombres_especialidad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="especialista">
+    <Key>
+      <PropertyRef Name="id_especialista" />
+    </Key>
+    <Property Name="id_especialista" Type="int" Nullable="false" />
+    <Property Name="id_especialidad" Type="int" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="varchar" MaxLength="13" Nullable="false" />
+  </EntityType>
+  <EntityType Name="examen">
+    <Key>
+      <PropertyRef Name="id_examen" />
+    </Key>
+    <Property Name="id_examen" Type="int" Nullable="false" />
+    <Property Name="rut_usuario" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="detalle_examen" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fechaHora_Examen" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="informe">
+    <Key>
+      <PropertyRef Name="id_informe" />
+    </Key>
+    <Property Name="id_informe" Type="int" Nullable="false" />
+    <Property Name="rut_usuario" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="diagnostico_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha_registro" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="rut_stakeholder" />
+    </Key>
+    <Property Name="rut_stakeholder" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stakeholder">
+    <Key>
+      <PropertyRef Name="rut_stakeholder" />
+    </Key>
+    <Property Name="rut_stakeholder" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="nombres_stakeholder" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidos_stakeholder" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="date" Nullable="false" />
+    <Property Name="telefono_stakeholder" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion_stakeholder" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mail_stakeholder" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_cargo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="rut_usuario" />
+    </Key>
+    <Property Name="rut_usuario" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="nombres_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidos_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="derivacion_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="date" Nullable="false" />
+    <Property Name="telefono_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mail_usuario" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__agenda__rut_stak__4E88ABD4">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="agenda" Type="Self.agenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="agenda">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__agenda__rut_usua__4D94879B">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="agenda" Type="Self.agenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="rut_usuario" />
+      </Principal>
+      <Dependent Role="agenda">
+        <PropertyRef Name="rut_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__detalle_i__id_in__4AB81AF0">
+    <End Role="informe" Type="Self.informe" Multiplicity="1" />
+    <End Role="detalle_informe" Type="Self.detalle_informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="informe">
+        <PropertyRef Name="id_informe" />
+      </Principal>
+      <Dependent Role="detalle_informe">
+        <PropertyRef Name="id_informe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__especiali__id_es__412EB0B6">
+    <End Role="especialidad" Type="Self.especialidad" Multiplicity="1" />
+    <End Role="especialista" Type="Self.especialista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especialidad">
+        <PropertyRef Name="id_especialidad" />
+      </Principal>
+      <Dependent Role="especialista">
+        <PropertyRef Name="id_especialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__especiali__rut_s__4222D4EF">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="especialista" Type="Self.especialista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="especialista">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__examen__rut_stak__52593CB8">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="examen" Type="Self.examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="examen">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__examen__rut_usua__5165187F">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="examen" Type="Self.examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="rut_usuario" />
+      </Principal>
+      <Dependent Role="examen">
+        <PropertyRef Name="rut_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__informe__rut_sta__47DBAE45">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="informe" Type="Self.informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="informe">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__informe__rut_usu__46E78A0C">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="informe" Type="Self.informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="rut_usuario" />
+      </Principal>
+      <Dependent Role="informe">
+        <PropertyRef Name="rut_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__login__rut_stake__3E52440B">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="login" Type="Self.login" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__stakehold__id_ca__3B75D760">
+    <End Role="cargo" Type="Self.cargo" Multiplicity="1" />
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cargo">
+        <PropertyRef Name="id_cargo" />
+      </Principal>
+      <Dependent Role="stakeholder">
+        <PropertyRef Name="id_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bd_MatasanosModelStoreContainer">
+    <EntitySet Name="agenda" EntityType="Self.agenda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cargo" EntityType="Self.cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="detalle_informe" EntityType="Self.detalle_informe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="especialidad" EntityType="Self.especialidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="especialista" EntityType="Self.especialista" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="examen" EntityType="Self.examen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="informe" EntityType="Self.informe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stakeholder" EntityType="Self.stakeholder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__agenda__rut_stak__4E88ABD4" Association="Self.FK__agenda__rut_stak__4E88ABD4">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="agenda" EntitySet="agenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__agenda__rut_usua__4D94879B" Association="Self.FK__agenda__rut_usua__4D94879B">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="agenda" EntitySet="agenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalle_i__id_in__4AB81AF0" Association="Self.FK__detalle_i__id_in__4AB81AF0">
+      <End Role="informe" EntitySet="informe" />
+      <End Role="detalle_informe" EntitySet="detalle_informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__especiali__id_es__412EB0B6" Association="Self.FK__especiali__id_es__412EB0B6">
+      <End Role="especialidad" EntitySet="especialidad" />
+      <End Role="especialista" EntitySet="especialista" />
+    </AssociationSet>
+    <AssociationSet Name="FK__especiali__rut_s__4222D4EF" Association="Self.FK__especiali__rut_s__4222D4EF">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="especialista" EntitySet="especialista" />
+    </AssociationSet>
+    <AssociationSet Name="FK__examen__rut_stak__52593CB8" Association="Self.FK__examen__rut_stak__52593CB8">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="examen" EntitySet="examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__examen__rut_usua__5165187F" Association="Self.FK__examen__rut_usua__5165187F">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="examen" EntitySet="examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__informe__rut_sta__47DBAE45" Association="Self.FK__informe__rut_sta__47DBAE45">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="informe" EntitySet="informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__informe__rut_usu__46E78A0C" Association="Self.FK__informe__rut_usu__46E78A0C">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="informe" EntitySet="informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__login__rut_stake__3E52440B" Association="Self.FK__login__rut_stake__3E52440B">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="login" EntitySet="login" />
+    </AssociationSet>
+    <AssociationSet Name="FK__stakehold__id_ca__3B75D760" Association="Self.FK__stakehold__id_ca__3B75D760">
+      <End Role="cargo" EntitySet="cargo" />
+      <End Role="stakeholder" EntitySet="stakeholder" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

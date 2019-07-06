@@ -1,0 +1,75 @@
+﻿@model examen1.usuario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombres_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombres_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidos_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.derivacion_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.derivacion_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mail_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail_usuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.rut_usuario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

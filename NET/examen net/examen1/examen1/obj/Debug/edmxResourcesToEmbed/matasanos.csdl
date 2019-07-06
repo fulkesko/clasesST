@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bd_MatasanosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="agenda">
+    <Key>
+      <PropertyRef Name="id_agenda" />
+    </Key>
+    <Property Name="id_agenda" Type="Int32" Nullable="false" />
+    <Property Name="rut_usuario" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hora_agenda" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="confirmado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="stakeholder" Relationship="Self.FK__agenda__rut_stak__4E88ABD4" FromRole="agenda" ToRole="stakeholder" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__agenda__rut_usua__4D94879B" FromRole="agenda" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="cargo">
+    <Key>
+      <PropertyRef Name="id_cargo" />
+    </Key>
+    <Property Name="id_cargo" Type="Int32" Nullable="false" />
+    <Property Name="nombres_cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="stakeholder" Relationship="Self.FK__stakehold__id_ca__3B75D760" FromRole="cargo" ToRole="stakeholder" />
+  </EntityType>
+  <EntityType Name="detalle_informe">
+    <Key>
+      <PropertyRef Name="id_detalle" />
+    </Key>
+    <Property Name="id_detalle" Type="Int32" Nullable="false" />
+    <Property Name="id_informe" Type="Int32" Nullable="false" />
+    <Property Name="observacion_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_registro" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="informe" Relationship="Self.FK__detalle_i__id_in__4AB81AF0" FromRole="detalle_informe" ToRole="informe" />
+  </EntityType>
+  <EntityType Name="especialidad">
+    <Key>
+      <PropertyRef Name="id_especialidad" />
+    </Key>
+    <Property Name="id_especialidad" Type="Int32" Nullable="false" />
+    <Property Name="nombres_especialidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="especialista" Relationship="Self.FK__especiali__id_es__412EB0B6" FromRole="especialidad" ToRole="especialista" />
+  </EntityType>
+  <EntityType Name="especialista">
+    <Key>
+      <PropertyRef Name="id_especialista" />
+    </Key>
+    <Property Name="id_especialista" Type="Int32" Nullable="false" />
+    <Property Name="id_especialidad" Type="Int32" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="especialidad" Relationship="Self.FK__especiali__id_es__412EB0B6" FromRole="especialista" ToRole="especialidad" />
+    <NavigationProperty Name="stakeholder" Relationship="Self.FK__especiali__rut_s__4222D4EF" FromRole="especialista" ToRole="stakeholder" />
+  </EntityType>
+  <EntityType Name="examen">
+    <Key>
+      <PropertyRef Name="id_examen" />
+    </Key>
+    <Property Name="id_examen" Type="Int32" Nullable="false" />
+    <Property Name="rut_usuario" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="detalle_examen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaHora_Examen" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="stakeholder" Relationship="Self.FK__examen__rut_stak__52593CB8" FromRole="examen" ToRole="stakeholder" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__examen__rut_usua__5165187F" FromRole="examen" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="informe">
+    <Key>
+      <PropertyRef Name="id_informe" />
+    </Key>
+    <Property Name="id_informe" Type="Int32" Nullable="false" />
+    <Property Name="rut_usuario" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rut_stakeholder" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="diagnostico_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_registro" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="detalle_informe" Relationship="Self.FK__detalle_i__id_in__4AB81AF0" FromRole="informe" ToRole="detalle_informe" />
+    <NavigationProperty Name="stakeholder" Relationship="Self.FK__informe__rut_sta__47DBAE45" FromRole="informe" ToRole="stakeholder" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__informe__rut_usu__46E78A0C" FromRole="informe" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="rut_stakeholder" />
+    </Key>
+    <Property Name="rut_stakeholder" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="stakeholder" Relationship="Self.FK__login__rut_stake__3E52440B" FromRole="login" ToRole="stakeholder" />
+  </EntityType>
+  <EntityType Name="stakeholder">
+    <Key>
+      <PropertyRef Name="rut_stakeholder" />
+    </Key>
+    <Property Name="rut_stakeholder" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombres_stakeholder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos_stakeholder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="telefono_stakeholder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion_stakeholder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mail_stakeholder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_cargo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="agenda" Relationship="Self.FK__agenda__rut_stak__4E88ABD4" FromRole="stakeholder" ToRole="agenda" />
+    <NavigationProperty Name="cargo" Relationship="Self.FK__stakehold__id_ca__3B75D760" FromRole="stakeholder" ToRole="cargo" />
+    <NavigationProperty Name="especialista" Relationship="Self.FK__especiali__rut_s__4222D4EF" FromRole="stakeholder" ToRole="especialista" />
+    <NavigationProperty Name="examen" Relationship="Self.FK__examen__rut_stak__52593CB8" FromRole="stakeholder" ToRole="examen" />
+    <NavigationProperty Name="informe" Relationship="Self.FK__informe__rut_sta__47DBAE45" FromRole="stakeholder" ToRole="informe" />
+    <NavigationProperty Name="login" Relationship="Self.FK__login__rut_stake__3E52440B" FromRole="stakeholder" ToRole="login" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="rut_usuario" />
+    </Key>
+    <Property Name="rut_usuario" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombres_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="derivacion_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="telefono_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mail_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="agenda" Relationship="Self.FK__agenda__rut_usua__4D94879B" FromRole="usuario" ToRole="agenda" />
+    <NavigationProperty Name="examen" Relationship="Self.FK__examen__rut_usua__5165187F" FromRole="usuario" ToRole="examen" />
+    <NavigationProperty Name="informe" Relationship="Self.FK__informe__rut_usu__46E78A0C" FromRole="usuario" ToRole="informe" />
+  </EntityType>
+  <Association Name="FK__agenda__rut_stak__4E88ABD4">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="agenda" Type="Self.agenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="agenda">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__agenda__rut_usua__4D94879B">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="agenda" Type="Self.agenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="rut_usuario" />
+      </Principal>
+      <Dependent Role="agenda">
+        <PropertyRef Name="rut_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__stakehold__id_ca__3B75D760">
+    <End Role="cargo" Type="Self.cargo" Multiplicity="1" />
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cargo">
+        <PropertyRef Name="id_cargo" />
+      </Principal>
+      <Dependent Role="stakeholder">
+        <PropertyRef Name="id_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__detalle_i__id_in__4AB81AF0">
+    <End Role="informe" Type="Self.informe" Multiplicity="1" />
+    <End Role="detalle_informe" Type="Self.detalle_informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="informe">
+        <PropertyRef Name="id_informe" />
+      </Principal>
+      <Dependent Role="detalle_informe">
+        <PropertyRef Name="id_informe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__especiali__id_es__412EB0B6">
+    <End Role="especialidad" Type="Self.especialidad" Multiplicity="1" />
+    <End Role="especialista" Type="Self.especialista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especialidad">
+        <PropertyRef Name="id_especialidad" />
+      </Principal>
+      <Dependent Role="especialista">
+        <PropertyRef Name="id_especialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__especiali__rut_s__4222D4EF">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="especialista" Type="Self.especialista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="especialista">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__examen__rut_stak__52593CB8">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="examen" Type="Self.examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="examen">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__examen__rut_usua__5165187F">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="examen" Type="Self.examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="rut_usuario" />
+      </Principal>
+      <Dependent Role="examen">
+        <PropertyRef Name="rut_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__informe__rut_sta__47DBAE45">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="informe" Type="Self.informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="informe">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__informe__rut_usu__46E78A0C">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="informe" Type="Self.informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="rut_usuario" />
+      </Principal>
+      <Dependent Role="informe">
+        <PropertyRef Name="rut_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__login__rut_stake__3E52440B">
+    <End Role="stakeholder" Type="Self.stakeholder" Multiplicity="1" />
+    <End Role="login" Type="Self.login" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="stakeholder">
+        <PropertyRef Name="rut_stakeholder" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="rut_stakeholder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bd_MatasanosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="agenda" EntityType="Self.agenda" />
+    <EntitySet Name="cargo" EntityType="Self.cargo" />
+    <EntitySet Name="detalle_informe" EntityType="Self.detalle_informe" />
+    <EntitySet Name="especialidad" EntityType="Self.especialidad" />
+    <EntitySet Name="especialista" EntityType="Self.especialista" />
+    <EntitySet Name="examen" EntityType="Self.examen" />
+    <EntitySet Name="informe" EntityType="Self.informe" />
+    <EntitySet Name="login" EntityType="Self.login" />
+    <EntitySet Name="stakeholder" EntityType="Self.stakeholder" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="FK__agenda__rut_stak__4E88ABD4" Association="Self.FK__agenda__rut_stak__4E88ABD4">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="agenda" EntitySet="agenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__agenda__rut_usua__4D94879B" Association="Self.FK__agenda__rut_usua__4D94879B">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="agenda" EntitySet="agenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__stakehold__id_ca__3B75D760" Association="Self.FK__stakehold__id_ca__3B75D760">
+      <End Role="cargo" EntitySet="cargo" />
+      <End Role="stakeholder" EntitySet="stakeholder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalle_i__id_in__4AB81AF0" Association="Self.FK__detalle_i__id_in__4AB81AF0">
+      <End Role="informe" EntitySet="informe" />
+      <End Role="detalle_informe" EntitySet="detalle_informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__especiali__id_es__412EB0B6" Association="Self.FK__especiali__id_es__412EB0B6">
+      <End Role="especialidad" EntitySet="especialidad" />
+      <End Role="especialista" EntitySet="especialista" />
+    </AssociationSet>
+    <AssociationSet Name="FK__especiali__rut_s__4222D4EF" Association="Self.FK__especiali__rut_s__4222D4EF">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="especialista" EntitySet="especialista" />
+    </AssociationSet>
+    <AssociationSet Name="FK__examen__rut_stak__52593CB8" Association="Self.FK__examen__rut_stak__52593CB8">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="examen" EntitySet="examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__examen__rut_usua__5165187F" Association="Self.FK__examen__rut_usua__5165187F">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="examen" EntitySet="examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__informe__rut_sta__47DBAE45" Association="Self.FK__informe__rut_sta__47DBAE45">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="informe" EntitySet="informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__informe__rut_usu__46E78A0C" Association="Self.FK__informe__rut_usu__46E78A0C">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="informe" EntitySet="informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__login__rut_stake__3E52440B" Association="Self.FK__login__rut_stake__3E52440B">
+      <End Role="stakeholder" EntitySet="stakeholder" />
+      <End Role="login" EntitySet="login" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

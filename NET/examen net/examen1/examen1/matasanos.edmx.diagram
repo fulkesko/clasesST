@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0aa292403b8a429ba7d5bf5742812e6c" Name="Diagram1">
+        <EntityTypeShape EntityType="bd_MatasanosModel.agenda" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.cargo" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.detalle_informe" Width="1.5" PointX="7.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.especialidad" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.especialista" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.examen" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.informe" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.login" Width="1.5" PointX="6.625" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.stakeholder" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_MatasanosModel.usuario" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__agenda__rut_stak__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__agenda__rut_usua__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__stakehold__id_ca__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__detalle_i__id_in__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__especiali__id_es__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__especiali__rut_s__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__examen__rut_stak__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__examen__rut_usua__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__informe__rut_sta__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__informe__rut_usu__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_MatasanosModel.FK__login__rut_stake__3E52440B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

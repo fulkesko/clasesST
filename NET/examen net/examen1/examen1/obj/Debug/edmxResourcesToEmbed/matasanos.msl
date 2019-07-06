@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bd_MatasanosModelStoreContainer" CdmEntityContainer="bd_MatasanosEntities">
+    <EntitySetMapping Name="agenda">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.agenda">
+        <MappingFragment StoreEntitySet="agenda">
+          <ScalarProperty Name="id_agenda" ColumnName="id_agenda" />
+          <ScalarProperty Name="rut_usuario" ColumnName="rut_usuario" />
+          <ScalarProperty Name="rut_stakeholder" ColumnName="rut_stakeholder" />
+          <ScalarProperty Name="hora_agenda" ColumnName="hora_agenda" />
+          <ScalarProperty Name="confirmado" ColumnName="confirmado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cargo">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.cargo">
+        <MappingFragment StoreEntitySet="cargo">
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+          <ScalarProperty Name="nombres_cargo" ColumnName="nombres_cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_informe">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.detalle_informe">
+        <MappingFragment StoreEntitySet="detalle_informe">
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="id_informe" ColumnName="id_informe" />
+          <ScalarProperty Name="observacion_usuario" ColumnName="observacion_usuario" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="especialidad">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.especialidad">
+        <MappingFragment StoreEntitySet="especialidad">
+          <ScalarProperty Name="id_especialidad" ColumnName="id_especialidad" />
+          <ScalarProperty Name="nombres_especialidad" ColumnName="nombres_especialidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="especialista">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.especialista">
+        <MappingFragment StoreEntitySet="especialista">
+          <ScalarProperty Name="id_especialista" ColumnName="id_especialista" />
+          <ScalarProperty Name="id_especialidad" ColumnName="id_especialidad" />
+          <ScalarProperty Name="rut_stakeholder" ColumnName="rut_stakeholder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="examen">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.examen">
+        <MappingFragment StoreEntitySet="examen">
+          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+          <ScalarProperty Name="rut_usuario" ColumnName="rut_usuario" />
+          <ScalarProperty Name="rut_stakeholder" ColumnName="rut_stakeholder" />
+          <ScalarProperty Name="detalle_examen" ColumnName="detalle_examen" />
+          <ScalarProperty Name="fechaHora_Examen" ColumnName="fechaHora_Examen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="informe">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.informe">
+        <MappingFragment StoreEntitySet="informe">
+          <ScalarProperty Name="id_informe" ColumnName="id_informe" />
+          <ScalarProperty Name="rut_usuario" ColumnName="rut_usuario" />
+          <ScalarProperty Name="rut_stakeholder" ColumnName="rut_stakeholder" />
+          <ScalarProperty Name="diagnostico_usuario" ColumnName="diagnostico_usuario" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="login">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="rut_stakeholder" ColumnName="rut_stakeholder" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stakeholder">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.stakeholder">
+        <MappingFragment StoreEntitySet="stakeholder">
+          <ScalarProperty Name="rut_stakeholder" ColumnName="rut_stakeholder" />
+          <ScalarProperty Name="nombres_stakeholder" ColumnName="nombres_stakeholder" />
+          <ScalarProperty Name="apellidos_stakeholder" ColumnName="apellidos_stakeholder" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="telefono_stakeholder" ColumnName="telefono_stakeholder" />
+          <ScalarProperty Name="direccion_stakeholder" ColumnName="direccion_stakeholder" />
+          <ScalarProperty Name="mail_stakeholder" ColumnName="mail_stakeholder" />
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="bd_MatasanosModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="rut_usuario" ColumnName="rut_usuario" />
+          <ScalarProperty Name="nombres_usuario" ColumnName="nombres_usuario" />
+          <ScalarProperty Name="apellidos_usuario" ColumnName="apellidos_usuario" />
+          <ScalarProperty Name="derivacion_usuario" ColumnName="derivacion_usuario" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="telefono_usuario" ColumnName="telefono_usuario" />
+          <ScalarProperty Name="direccion_usuario" ColumnName="direccion_usuario" />
+          <ScalarProperty Name="mail_usuario" ColumnName="mail_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

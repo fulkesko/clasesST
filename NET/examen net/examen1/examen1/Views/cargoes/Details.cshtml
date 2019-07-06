@@ -1,0 +1,27 @@
+﻿@model examen1.cargo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombres_cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombres_cargo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_cargo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

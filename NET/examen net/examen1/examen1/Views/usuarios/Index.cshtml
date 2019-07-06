@@ -1,0 +1,70 @@
+﻿@model IEnumerable<examen1.usuario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombres_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidos_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.derivacion_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail_usuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombres_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidos_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.derivacion_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail_usuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.rut_usuario }) |
+            @Html.ActionLink("Details", "Details", new { id=item.rut_usuario }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.rut_usuario })
+        </td>
+    </tr>
+}
+
+</table>
